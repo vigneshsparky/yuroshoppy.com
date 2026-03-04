@@ -1,0 +1,971 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <title>Yuro Shoppy | Fast delivery Tamil Nadu</title>
+    <link rel="shortcut icon" href="gallery/ys_color_fav.png" type="image/x-icon">
+    <!-- Font Awesome 6 (free) for icons & professional look -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+    <!-- TOP ANNOUNCEMENT (fixed-time + moving offers) -->
+    <div class="ys-top-announce">
+        <div class="ys-container ys-announce-flex">
+            <div class="ys-live-time">
+                <span><i class="far fa-clock"></i> <span id="ysLiveTime"></span></span>
+                <span><i class="fas fa-calendar-alt"></i> <span id="ysLiveDate"></span></span>
+            </div>
+            <div class="ys-offer-marquee">
+                <span><i class="fas fa-bolt" style="color: var(--ys-yellow);"></i> Fast Delivery TN</span>
+                <span><i class="fas fa-tags"></i> New Offers Live!</span>
+                <span><i class="fas fa-fire"></i> 150+ trending products</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- STICKY HEADER -->
+    <!-- <div class="ys-header-sticky">
+        <div class="ys-container ys-header-wrapper">
+
+            <div class="ys-logo-area">
+                <span class="ys-logo ys-logo-yellow">Yuro</span>
+                <span class="ys-logo ys-logo-blue">Shoppy</span>
+            </div>
+
+            <nav class="ys-nav-links">
+                <a href="#">About</a>
+                <a href="#">Business Models</a>
+                <a href="#">Delivery</a>
+                <a href="#">Contact</a>
+                <a href="#">Demo App</a>
+                <a href="#" class="ys-cta-btn">
+                    <i class="fas fa-download"></i> Download App
+                </a>
+            </nav>
+
+            <div class="ys-mobile-menu-icon">
+                <i class="fas fa-bars"></i>
+            </div>
+
+        </div>
+
+        ✅ Mobile Menu
+        <div class="ys-mobile-menu">
+            <a href="#">About</a>
+            <a href="#">Business Models</a>
+            <a href="#">Delivery</a>
+            <a href="#">Contact</a>
+            <a href="#">Demo App</a>
+            <a href="#" class="ys-mobile-cta">
+                <i class="fas fa-download"></i> Download App
+            </a>
+        </div>
+    </div>   -->
+
+    <header class="ys-header">
+
+        <div class="ys-container ys-header-inner">
+
+            <!-- Logo -->
+            <div class="ys-brand">
+                <img src="gallery/ys_color_fav.png" alt="YuroShoppy Logo">
+
+                <h1 class="ys-brand-text">
+                    Yuro<span>Shoppy</span>
+                </h1>
+            </div>
+
+            <!-- Desktop Menu -->
+            <nav class="ys-nav">
+                <a href="about.html">About</a>
+                <a href="partnership.html">Business Models</a>
+                <a href="deliveryprocess.html">Delivery</a>
+                <a href="#yscontact">Contact</a>
+                <a href="vendor.html">Vendor</a>
+
+                <a href="#" class="ys-btn-download">
+                    Download App
+                    <i class="fas fa-arrow-down"></i>
+                </a>
+            </nav>
+
+            <!-- Mobile Menu Button -->
+            <div class="ys-menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="ys-mobile-nav">
+            <a href="about.html">About</a>
+            <a href="partnership.html">Business Models</a>
+            <a href="deliveryprocess.html">Delivery</a>
+            <a href="index.html#yscontact">Contact</a>
+            <a href="vendor.html">Vendor</a>
+
+            <a href="#" class="ys-btn-mobile">
+                Download App
+                <i class="fas fa-arrow-down"></i>
+            </a>
+        </div>
+
+    </header>
+
+    <!-- ANNOUNCEMENT BAR (moving / dynamic) -->
+    <div class="ys-announcement">
+        <div class="ys-announcement-content">
+            <!-- duplicated for seamless loop -->
+            <span class="ys-announcement-item"><i class="fas fa-rocket"></i> Fast Delivery Across Tamil Nadu</span>
+            <span class="ys-announcement-item"><i class="fas fa-tags"></i> New Offers Live Today!</span>
+            <span class="ys-announcement-item"><i class="fas fa-mobile-alt"></i> Trending Products Available Now</span>
+            <span class="ys-announcement-item ys-live-time"><i class="far fa-clock"></i> <span
+                    id="ys-live-time"></span></span>
+            <!-- duplicate for seamless loop -->
+            <span class="ys-announcement-item"><i class="fas fa-rocket"></i> Fast Delivery Across Tamil Nadu</span>
+            <span class="ys-announcement-item"><i class="fas fa-tags"></i> New Offers Live Today!</span>
+            <span class="ys-announcement-item"><i class="fas fa-mobile-alt"></i> Trending Products Available Now</span>
+            <span class="ys-announcement-item ys-live-time"><i class="far fa-clock"></i> <span
+                    id="ys-live-time2"></span></span>
+        </div>
+    </div>
+
+    <!-- HERO (critical: app focus) -->
+    <section class="ys-hero">
+        <div class="ys-container ys-hero-grid">
+            <div class="ys-hero-left">
+                <h1>
+                    Everything You Need.<br>
+                    <span class="ys-highlight">
+                        Delivered <span id="ys-rotating-text">Fast</span>
+                    </span>
+                </h1>
+                <p class="ys-hero-sub">Quality Products • Affordable Prices • Lightning-Fast Delivery</p>
+                <div class="ys-support-tags">
+                    <span><i class="fas fa-apple-alt"></i> Groceries</span>
+                    <span><i class="fas fa-box"></i> Daily essentials</span>
+                    <span><i class="fas fa-store"></i> Local products</span>
+                    <span><i class="fas fa-tag"></i> Special deals</span>
+                </div>
+                <div class="ys-btn-group">
+                    <a href="#" class="ys-btn-primary"><i class="fas fa-download"></i> Download App</a>
+                    <a href="investor.html" class="ys-btn-outline"><i class="fas fa-mobile-alt"></i> View Benefits </a>
+                </div>
+            </div>
+            <div class="ys-hero-right">
+                <!-- app mockup visual placeholder -->
+                <span style="background:rgba(0,0,0,0.5); padding:8px 18px; border-radius:60px;">📲 Yuro Shoppy
+                    App</span>
+            </div>
+        </div>
+    </section>
+
+
+        <!-- Join With Us Section -->
+        <section class="join-section">
+            <div class="join-content">
+                <h2>Join With Us</h2>
+                <p>Positions Available: <br> Starter District Partner & District Vendor </p>
+                <p>Become a part of our growing network and build your business with us.</p>
+                <a href="investor.html" class="join-btn">Apply Now</a>
+            </div>
+        </section>
+
+    <!-- BRAND VALUES -->
+    <section class="ys-values">
+        <div class="ys-container">
+            <div class="ys-values-grid">
+                <div class="ys-value-card"><i class="fas fa-rocket"></i>
+                    <h3>Fast Delivery</h3>
+                    <p>From nearby hubs, always on time.</p>
+                </div>
+                <div class="ys-value-card"><i class="fas fa-check-circle"></i>
+                    <h3>Quality Verified</h3>
+                    <p>Every product checked.</p>
+                </div>
+                <div class="ys-value-card"><i class="fas fa-tags"></i>
+                    <h3>Low Price Guarantee</h3>
+                    <p>Best rates daily.</p>
+                </div>
+                <div class="ys-value-card"><i class="fas fa-hand-holding-heart"></i>
+                    <h3>Reliable Service</h3>
+                    <p>Support 7 days.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TRENDING PRODUCTS PREVIEW -->
+    <!-- <section class="ys-trending">
+        <div class="ys-container">
+            <h2 class="ys-section-title"><i class="fas fa-fire" style="color:var(--ys-yellow)"></i> Trending Now · Best
+                Deals</h2>
+            <div class="ys-trending-grid">
+                <div class="ys-trend-item"><i class="fas fa-mobile-alt"></i>
+                    <h4>Electronics</h4><span class="ys-badge">-20%</span>
+                </div>
+                <div class="ys-trend-item"><i class="fas fa-tshirt"></i>
+                    <h4>Fashion</h4><span class="ys-badge">New</span>
+                </div>
+                <div class="ys-trend-item"><i class="fas fa-apple-alt"></i>
+                    <h4>Fresh Grocery</h4><span class="ys-badge">Offer</span>
+                </div>
+                <div class="ys-trend-item"><i class="fas fa-couch"></i>
+                    <h4>Home</h4><span class="ys-badge">Trending</span>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+    <section class="ys-trending">
+        <div class="ys-container">
+
+            <h2 class="ys-section-title">
+                🔥 Trending Deals · Limited Offers
+            </h2>
+
+            <div class="ys-trending-grid">
+
+                <div class="ys-trend-card">
+                    <span class="ys-badge">20% OFF</span>
+                    <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9" alt="">
+                    <h4>Smart Phones</h4>
+                    <p>Trending Now</p>
+                </div>
+
+                <div class="ys-trend-card">
+                    <span class="ys-badge">New Arrival</span>
+                    <img src="https://images.unsplash.com/photo-1523381294911-8d3cead13475" alt="">
+                    <h4>Fashion Wear</h4>
+                    <p>Latest Style</p>
+                </div>
+
+                <div class="ys-trend-card">
+                    <span class="ys-badge">Limited Offer</span>
+                    <img src="https://images.unsplash.com/photo-1542838132-92c53300491e" alt="">
+                    <h4>Fresh Grocery</h4>
+                    <p>Daily Essentials</p>
+                </div>
+
+                <div class="ys-trend-card">
+                    <span class="ys-badge">Trending</span>
+                    <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7" alt="">
+                    <h4>Home Decor</h4>
+                    <p>Best Deals</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    
+
+    <!-- CAROUSEL HIGHLIGHT (themed) -->
+    <section class="ys-carousel-highlight">
+        <div class="ys-container">
+            <div class="ys-carousel-grid">
+                <div class="ys-slide-card"><i class="fas fa-percent"></i>
+                    <h3>Hot Deals Today</h3><a href="#" class="ys-slide-cta">Shop Now →</a>
+                </div>
+                <div class="ys-slide-card"><i class="fas fa-truck"></i>
+                    <h3>Delivery Network</h3><a href="deliveryprocess.html" class="ys-slide-cta">Track →</a>
+                </div>
+                <!-- <div class="ys-slide-card"><i class="fas fa-star"></i>
+                    <h3>App Features</h3><a href="#" class="ys-slide-cta">Explore →</a>
+                </div> -->
+                <div class="ys-slide-card"><i class="fas fa-handshake"></i>
+                    <h3>Partner Brands</h3><a href="investor.html" class="ys-slide-cta">Join →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- APP PROMOTION (conversion) -->
+    <section class="ys-app-promo">
+        <h2 class="ys-section-title">Yuro Mobile App</h2>
+        <div class="ys-container ys-app-flex">
+
+            <div class="ys-app-left">
+                <h2>Experience Faster Shopping with the <span style="color:var(--ys-blue)">Yuro Shoppy App</span></h2>
+                <div class="ys-app-badges">
+                    <a href="#" class="ys-store-btn"><i class="fab fa-google-play"></i> Google Play</a>
+                    <a href="#" class="ys-store-btn"><i class="fab fa-apple"></i> App Store</a>
+                </div>
+                <div style="margin: 25px 0; display: flex; gap: 15px; flex-wrap: wrap;">
+                    <span><i class="fas fa-bolt" style="color:var(--ys-yellow)"></i> Faster ordering</span>
+                    <span><i class="fas fa-gift"></i> Exclusive offers</span>
+                    <span><i class="fas fa-map-marker-alt"></i> Easy tracking</span>
+                </div>
+                <span class="ys-app-psycho"><i class="fas fa-lock"></i> App‑only discounts · Limited time</span>
+            </div>
+            <div style="text-align:center;" class="ys-app-right">
+                <!-- 📱 app
+                mockup -->
+                <img src="gallery/home-img.png" alt="img1" class="app_promo_img">
+            </div>
+        </div>
+    </section>
+
+    <section class="ys-carousel-section" id="ysShoppyCarousel">
+        <!-- main carousel block -->
+        <div class="ys-carousel-container">
+            <!-- slides wrapper (flex) -->
+            <div class="ys-slides-wrapper" id="ysSlidesWrapper">
+                <!-- slide 1 (unique data attribute) -->
+                <div class="ys-slide-item" data-ys-index="0" id="ysSlide1">
+                    <img src="gallery/ys_carousal_1.png" alt="yuro fashion 1" class="ys-slide-img" loading="lazy">
+                    <div class="ys-text-overlay">
+                        <h2 class="ys-animated-title">SUMMER VIBE</h2>
+                        <p class="ys-animated-sub">Edition #1 · limitless comfort</p>
+                    </div>
+                </div>
+                <!-- slide 2 -->
+                <div class="ys-slide-item" data-ys-index="1" id="ysSlide2">
+                    <img src="gallery/ys_carousal_1.png" alt="yuro streetwear" class="ys-slide-img" loading="lazy">
+                    <div class="ys-text-overlay">
+                        <h2 class="ys-animated-title">URBAN NOMAD</h2>
+                        <p class="ys-animated-sub">minimal · raw · authentic</p>
+                    </div>
+                </div>
+                <!-- slide 3 -->
+                <div class="ys-slide-item" data-ys-index="2" id="ysSlide3">
+                    <img src="gallery/ys_carousal_1.png" alt="yuro classic" class="ys-slide-img" loading="lazy">
+                    <div class="ys-text-overlay">
+                        <h2 class="ys-animated-title">TIMBER & TONES</h2>
+                        <p class="ys-animated-sub">earthy palette for modern souls</p>
+                    </div>
+                </div>
+                <!-- slide 4 -->
+                <div class="ys-slide-item" data-ys-index="3" id="ysSlide4">
+                    <img src="gallery/ys_carousal_1.png" alt="yuro travel" class="ys-slide-img" loading="lazy">
+                    <div class="ys-text-overlay">
+                        <h2 class="ys-animated-title">WANDERLUST</h2>
+                        <p class="ys-animated-sub">carry stories, not luggage</p>
+                    </div>
+                </div>
+                <!-- slide 5 -->
+                <div class="ys-slide-item" data-ys-index="4" id="ysSlide5">
+                    <img src="gallery/ys_carousal_1.png" alt="yuro tech" class="ys-slide-img" loading="lazy">
+                    <div class="ys-text-overlay">
+                        <h2 class="ys-animated-title">MONOCHROME FUTURE</h2>
+                        <p class="ys-animated-sub">essentials redefined</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- left and right navigators (unique ids) -->
+            <div class="ys-nav-btn ys-nav-left" id="ysNavLeft" aria-label="previous slide">‹</div>
+            <div class="ys-nav-btn ys-nav-right" id="ysNavRight" aria-label="next slide">›</div>
+
+            <!-- bottom dots + autoplay indicator (clickable dots) -->
+            <div class="ys-autoplay-indicator" id="ysDotsContainer">
+                <span class="ys-dot" data-ys-dot="0"></span>
+                <span class="ys-dot" data-ys-dot="1"></span>
+                <span class="ys-dot" data-ys-dot="2"></span>
+                <span class="ys-dot" data-ys-dot="3"></span>
+                <span class="ys-dot" data-ys-dot="4"></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- STATS trust builder -->
+    <section class="ys-stats">
+        <div class="ys-container">
+            <h2 style="text-align:center; margin-bottom:30px;">Trusted by Thousands Across Tamil Nadu</h2>
+            <div class="ys-stats-grid">
+                <div class="ys-stat-item">
+                    <div class="ys-stat-num">10k+</div>
+                    <div class="ys-stat-label">Products</div>
+                </div>
+                <div class="ys-stat-item">
+                    <div class="ys-stat-num">50k+</div>
+                    <div class="ys-stat-label">Happy Customers</div>
+                </div>
+                <div class="ys-stat-item">
+                    <div class="ys-stat-num">30+</div>
+                    <div class="ys-stat-label">Hubs</div>
+                </div>
+                <div class="ys-stat-item">
+                    <div class="ys-stat-num">1000+</div>
+                    <div class="ys-stat-label">Daily Orders</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT section (simple, human, vision) -->
+    <section class="ys-about">
+        <h2 class="ys-section-title">About</h2>
+        <div class="ys-container ys-about-grid">
+
+            <div class="ys-mission">
+                <!-- <i class="fas fa-rocket" style="color:var(--ys-blue);font-size:30px;"></i> -->
+                <h3>Who we are</h3>
+                <p style="margin:15px 0">
+                    We're building a smarter way to shop across Tamil Nadu — combining speed,
+                    affordability, and quality. From Chennai to small towns, Yuro Shoppy delivers joy.
+                </p>
+                <p><strong>Mission:</strong> 10 min delivery, 0 compromise.</p>
+            </div>
+            <div class="ys-expand-card">
+                <i class="fas fa-map-marked-alt fa-2x"></i>
+                <h4 style="margin:15px 0">Tamil Nadu</h4>
+                <p>Live in 12 cities</p>
+            </div>
+            <div class="ys-expand-card" style="background: var(--ys-yellow); color:var(--ys-dark);">
+                <i class="fas fa-flag-india fa-2x"></i>
+                <h4 style="margin:15px 0">India expansion</h4>
+                <p>next: Bengaluru, Mumbai</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- BUSINESS MODELS -->
+    <section class="ys-business">
+
+        <div class="ys-business-overlay "></div>
+
+        <h2 class="ys-section-title business-title">Work With Us</h2>
+
+        <div class="ys-container">
+
+            <div class="ys-business-cards">
+
+                <!-- Inventory Model -->
+                <div class="ys-biz-card ys-biz-inventory">
+
+                    <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d" class="ys-biz-img">
+
+                    <h3 class="ys-biz-title inv-title">Inventory Model</h3>
+
+                    <p>Centralized warehouse system. We store and deliver products quickly across cities.</p>
+
+                    <a href="partnership.html#elig-inventory" class="ys-biz-btn inv-btn">Learn More →</a>
+
+                </div>
+
+
+                <!-- Marketplace Model -->
+                <div class="ys-biz-card ys-biz-market">
+
+                    <img src="https://images.unsplash.com/photo-1556745757-8d76bdb6984b" class="ys-biz-img">
+
+                    <h3 class="ys-biz-title market-title">Marketplace Model</h3>
+
+                    <p>Sell directly to thousands of customers across Tamil Nadu.</p>
+
+                    <a href="partnership.html#elig-marketplace" class="ys-biz-btn market-btn">Learn More →</a>
+
+                </div>
+
+
+                <!-- Hybrid Model -->
+                <div class="ys-biz-card ys-biz-hybrid">
+
+                    <img src="https://images.unsplash.com/photo-1556742031-c6961e8560b0" class="ys-biz-img">
+
+                    <h3 class="ys-biz-title hybrid-title">Hybrid Model</h3>
+
+                    <p>Combine inventory and marketplace to scale faster.</p>
+
+                    <a href="partnership.html#elig-hybrid" class="ys-biz-btn hybrid-btn">Learn More →</a>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- DELIVERY TEASER -->
+    <!-- <section class="ys-delivery-teaser">
+        <h2 class="ys-section-title">Delivery Tester</h2>
+        <div class="ys-container">
+
+            <div class="ys-steps">
+                <div class="ys-step"><i class="fas fa-mobile-alt fa-2x" style="color:var(--ys-blue)"></i>
+                    <span><strong>Order via App</strong></span>
+                </div>
+                <div class="ys-step"><i class="fas fa-map-pin fa-2x" style="color:var(--ys-yellow)"></i>
+                    <span><strong>Nearby Hub</strong></span>
+                </div>
+                <div class="ys-step"><i class="fas fa-bicycle fa-2x" style="color:var(--ys-blue)"></i>
+                    <span><strong>Fast Delivery</strong></span>
+                </div>
+                <a href="#" class="ys-btn-outline" style="padding:10px 24px;">View Process »</a>
+            </div>
+        </div>
+    </section> -->
+
+
+    <section class="ys-delivery">
+
+        <h2 class="ys-section-title">How Fast Delivery Works</h2>
+
+        <div class="ys-container">
+
+            <div class="ys-delivery-flow">
+
+                <div class="ys-step-card">
+                    <div class="ys-step-icon order">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>Order via App</h3>
+                    <p>Browse products and place order in seconds.</p>
+                </div>
+
+                <div class="ys-flow-line"></div>
+
+                <div class="ys-step-card">
+                    <div class="ys-step-icon hub">
+                        <i class="fas fa-warehouse"></i>
+                    </div>
+                    <h3>Nearby Hub</h3>
+                    <p>Your order is packed from the nearest hub.</p>
+                </div>
+
+                <div class="ys-flow-line"></div>
+
+                <div class="ys-step-card">
+                    <div class="ys-step-icon delivery">
+                        <i class="fas fa-bicycle"></i>
+                    </div>
+                    <h3>Fast Delivery</h3>
+                    <p>Delivered to your door within minutes.</p>
+                </div>
+
+            </div>
+
+            <div class="ys-delivery-btn-wrap">
+                <a href="#" class="ys-delivery-btn">View Full Process →</a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SUPPORT / CONTACT -->
+    <section class="ys-support" id="yscontact">
+        <div class="ys-container">
+            <div class="ys-support-box">
+                <h2 class="ys-support-title">
+                    <i class="fas fa-headset"></i> Need Help? We're here 24/7
+                </h2>
+                <p class="ys-support-sub">
+                    Our support team is always ready to help you with orders, delivery, and product questions.
+                </p>
+                <div class="ys-support-actions">
+                    <a href="#" class="ys-support-btn wa">
+                        <i class="fab fa-whatsapp"></i>
+                        <span>WhatsApp Chat</span>
+                    </a>
+
+                    <a href="#" class="ys-support-btn call">
+                        <i class="fas fa-phone-alt"></i>
+                        <span>Call Support</span>
+                    </a>
+
+                    <a href="#" class="ys-support-btn contact">
+                        <i class="fas fa-envelope"></i>
+                        <span>Contact Page</span>
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FOOTER (professional) -->
+    <footer class="ys-footer">
+
+        <div class="ys-container">
+
+            <div class="ys-footer-grid">
+
+                <!-- BRAND -->
+                <div class="ys-footer-brand">
+
+                    <img src="gallery/ys_color_fav.png" alt="Yuro Shoppy" class="ys-footer-logo">
+
+                    <h3 class="ys-brand-name">Yuro Shoppy</h3>
+                    <p class="ys-footer-desc">
+                        +91 7010704215
+                    </p>
+                    <p class="ys-footer-desc">
+                        Fast delivery • Quality products • Affordable prices across Tamil Nadu.
+                    </p>
+
+                    <div class="ys-footer-social">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-x-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+
+                </div>
+
+
+                <!-- NAVIGATION -->
+                <div class="ys-footer-col">
+                    <h4>Explore</h4>
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About Us</a>
+                    <a href="partnership.html">Business Models</a>
+                    <a href="deliveryprocess.html">Delivery Process</a>
+                    <a href="index.html#yscontact">Careers</a>
+                </div>
+
+
+                <!-- CUSTOMER -->
+                <div class="ys-footer-col">
+                    <h4>Customer</h4>
+                    <a href="#">Contact Support</a>
+                    <a href="#">Order Tracking</a>
+                    <a href="#">Shipping Policy</a>
+                    <a href="#">Returns & Refunds</a>
+                    <a href="#">Help Center</a>
+                </div>
+
+
+                <!-- APP DOWNLOAD -->
+                <div class="ys-footer-col ys-app-section">
+
+                    <h4>Get the App</h4>
+
+                    <p>Download Yuro Shoppy for faster shopping.</p>
+
+                    <div class="ys-app-buttons">
+
+                        <a href="#" class="ys-playstore">
+                            <i class="fab fa-google-play"></i>
+                            <span>Google Play</span>
+                        </a>
+
+                        <a href="#" class="ys-appstore">
+                            <i class="fab fa-apple"></i>
+                            <span>App Store</span>
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- QUOTE -->
+
+            <div class="ys-footer-quote">
+                “Shopping should be fast, simple, and accessible for everyone.”
+            </div>
+
+
+            <!-- BOTTOM -->
+
+            <div class="ys-footer-bottom">
+
+                <span>© 2026 Yuro Shoppy. All rights reserved.</span>
+
+                <div class="ys-footer-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Refund Policy</a>
+                </div>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+    <!-- tiny script for live time -->
+    <script>
+        function updateLiveTime() {
+            const now = new Date();
+            document.getElementById('ysLiveTime').innerText = now.toLocaleTimeString('en-IN', { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+            document.getElementById('ysLiveDate').innerText = now.toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' });
+        }
+        updateLiveTime();
+        setInterval(updateLiveTime, 1000);
+    </script>
+
+    <script>
+        function updateLiveTime_move() {
+            const now = new Date();
+            const timeStr = now.toLocaleTimeString('en-IN', { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true });
+            document.getElementById('ys-live-time') && (document.getElementById('ys-live-time').innerText = timeStr);
+            document.getElementById('ys-live-time2') && (document.getElementById('ys-live-time2').innerText = timeStr);
+        }
+        updateLiveTime_move();
+        setInterval(updateLiveTime_move, 1000);
+    </script>
+    <script>
+        const ysWords = [
+            "Fast",
+            "Quickly",
+            "On Time",
+            "Securely",
+            "Safely",
+            "Instantly"
+        ];
+
+        const ysText = document.getElementById("ys-rotating-text");
+
+        function rotateText() {
+            ysText.classList.add("ys-text-hide");
+
+            setTimeout(() => {
+                const randomWord = ysWords[Math.floor(Math.random() * ysWords.length)];
+                ysText.textContent = randomWord;
+
+                ysText.classList.remove("ys-text-hide");
+                ysText.classList.add("ys-text-show");
+
+                setTimeout(() => {
+                    ysText.classList.remove("ys-text-show");
+                }, 400);
+
+            }, 400);
+        }
+
+        setInterval(rotateText, 2000); // Change every 2.5 seconds
+    </script>
+
+    <script>
+        function animateStats() {
+            const stats = document.querySelectorAll(".ys-stat-num");
+
+            stats.forEach(stat => {
+
+                const text = stat.textContent.trim();
+
+                // Extract number + suffix
+                const number = parseFloat(text.replace(/[^\d.]/g, ""));
+                const suffix = text.replace(/[\d.]/g, "");
+
+                let current = 0;
+                const duration = 6000; // animation time (ms)
+                const steps = 60;
+                const increment = number / steps;
+                const stepTime = duration / steps;
+
+                const counter = setInterval(() => {
+                    current += increment;
+
+                    if (current >= number) {
+                        current = number;
+                        clearInterval(counter);
+                    }
+
+                    stat.textContent = Math.floor(current) + suffix;
+
+                }, stepTime);
+            });
+        }
+
+        /* Trigger only when stats section is visible */
+        const statsSection = document.querySelector(".ys-stats");
+
+        const statsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateStats();
+                    statsObserver.disconnect(); // run once only
+                }
+            });
+        }, { threshold: 0.3 });
+
+        statsObserver.observe(statsSection);
+    </script>
+
+    <script>
+        (function () {
+            "use strict";
+
+            // ----- unique elements with ys prefix -----
+            const ysWrapper = document.getElementById('ysSlidesWrapper');
+            const ysSlides = document.querySelectorAll('.ys-slide-item');
+            const ysPrev = document.getElementById('ysNavLeft');
+            const ysNext = document.getElementById('ysNavRight');
+            const ysDots = document.querySelectorAll('.ys-dot');
+            const ysCarouselSection = document.querySelector('.ys-carousel-section');
+
+            if (!ysWrapper || !ysSlides.length) return;
+
+            let currentIndex = 0;
+            const totalSlides = ysSlides.length;  // 5
+            let autoPlayInterval = null;
+            let isPaused = false;          // manual navigation resets auto, but we keep running
+            const autoPlayDelay = 4000;      // 4 seconds
+
+            // ----- helper: update slide position + active classes -----
+            function updateCarousel(index) {
+                // loop bounds
+                if (index < 0) index = totalSlides - 1;
+                if (index >= totalSlides) index = 0;
+                currentIndex = index;
+
+                // shift wrapper
+                ysWrapper.style.transform = `translateX(-${currentIndex * 100}%)`;
+
+                // update active class on slides (for optional zoom)
+                ysSlides.forEach((slide, i) => {
+                    if (i === currentIndex) {
+                        slide.classList.add('ys-active');
+                    } else {
+                        slide.classList.remove('ys-active');
+                    }
+                });
+
+                // update dots
+                ysDots.forEach((dot, i) => {
+                    if (i === currentIndex) {
+                        dot.classList.add('ys-active-dot');
+                    } else {
+                        dot.classList.remove('ys-active-dot');
+                    }
+                });
+
+                // small reset animation trick: re-trigger text animation by toggling class?
+                // The texts use independent animation delay. When slide becomes active,
+                // the animation plays because of CSS. However if we quickly switch, we may need to
+                // force reflow to restart animation. For smoother perceived effect,
+                // we remove and re-add overlay? but it's fine with transition.
+                // (optional: little forced re-anim)
+                const activeSlide = ysSlides[currentIndex];
+                const overlays = activeSlide.querySelectorAll('.ys-animated-title, .ys-animated-sub');
+                overlays.forEach(el => {
+                    el.style.animation = 'none';
+                    el.offsetHeight; // reflow
+                    el.style.animation = null; // returns to CSS
+                });
+            }
+
+            // ----- next / prev methods -----
+            function goToNext() {
+                updateCarousel(currentIndex + 1);
+                resetAutoPlay();    // restart timer after manual interaction
+            }
+
+            function goToPrev() {
+                updateCarousel(currentIndex - 1);
+                resetAutoPlay();
+            }
+
+            // ----- autoplay start -----
+            function startAutoPlay() {
+                if (autoPlayInterval) clearInterval(autoPlayInterval);
+                autoPlayInterval = setInterval(() => {
+                    if (!isPaused) {
+                        goToNext();
+                    }
+                }, autoPlayDelay);
+            }
+
+            function resetAutoPlay() {
+                // restart interval on manual nav
+                if (autoPlayInterval) {
+                    clearInterval(autoPlayInterval);
+                }
+                startAutoPlay();
+            }
+
+            // pause on hover (nice ux)
+            ysCarouselSection.addEventListener('mouseenter', () => {
+                isPaused = true;
+                ysCarouselSection.classList.add('paused');
+            });
+            ysCarouselSection.addEventListener('mouseleave', () => {
+                isPaused = false;
+                ysCarouselSection.classList.remove('paused');
+            });
+
+            // ----- event listeners for nav -----
+            ysNext.addEventListener('click', (e) => {
+                e.stopPropagation();
+                goToNext();
+            });
+
+            ysPrev.addEventListener('click', (e) => {
+                e.stopPropagation();
+                goToPrev();
+            });
+
+            // dots click
+            ysDots.forEach((dot, idx) => {
+                dot.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    if (idx !== currentIndex) {
+                        updateCarousel(idx);
+                        resetAutoPlay();
+                    }
+                });
+            });
+
+            // optional keyboard left/right (for accessibility)
+            window.addEventListener('keydown', (e) => {
+                if (e.key === 'ArrowLeft') {
+                    goToPrev();
+                } else if (e.key === 'ArrowRight') {
+                    goToNext();
+                }
+            });
+
+            // initial active state and autoplay
+            updateCarousel(0);
+            startAutoPlay();
+
+            // ensure smooth resize does not break (wrapper width already % based)
+            // also if needed, reset any conflict
+            window.addEventListener('resize', () => {
+                // just reassert position (transform based on index*100% remains correct)
+                // but to be super safe we recall update (no side effect)
+                updateCarousel(currentIndex);
+            });
+
+            // small extra: swipe simulation on mobile? not necessary but we keep it clean.
+            // (optional) touch handling could be added, but left out for brevity.
+        })();
+    </script>
+
+    <!-- <script>
+        const menuIcon = document.querySelector(".ys-mobile-menu-icon");
+        const mobileMenu = document.querySelector(".ys-mobile-menu");
+        const icon = menuIcon.querySelector("i");
+
+        menuIcon.addEventListener("click", () => {
+            mobileMenu.classList.toggle("active");
+
+            /* Animate icon */
+            if (mobileMenu.classList.contains("active")) {
+                icon.classList.remove("fa-bars");
+                icon.classList.add("fa-times");
+            } else {
+                icon.classList.remove("fa-times");
+                icon.classList.add("fa-bars");
+            }
+        });
+    </script> -->
+
+    <script>
+        const toggle = document.querySelector(".ys-menu-toggle");
+        const mobileNav = document.querySelector(".ys-mobile-nav");
+
+        toggle.addEventListener("click", () => {
+            mobileNav.classList.toggle("active");
+        });
+    </script>
+
+</body>
+
+
+</html>
+

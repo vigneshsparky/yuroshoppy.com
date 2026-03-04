@@ -1,0 +1,1347 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yuro Shoppy · about</title>
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="shortcut icon" href="gallery/ys_color_fav.png" type="image/x-icon">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Poppins", sans-serif;
+            background: linear-gradient(145deg, #f2f5ff 0%, #f0f3fd 100%);
+            color: #1a1e2b;
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .page {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 2.5rem 2rem 4rem 2rem;
+        }
+
+
+        /* header start  */
+        /* HEADER */
+        .ys-header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+
+            backdrop-filter: blur(14px);
+            background: rgba(255, 255, 255, 0.75);
+
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        /* inner */
+        .ys-header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px;
+        }
+
+        /* brand */
+        /* BRAND AREA */
+        .ys-brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* logo */
+        .ys-brand img {
+            /* width: 38px; */
+            width: 45px;
+            filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.15));
+            border-radius: 50%;
+
+            /* transition:0.3s; */
+        }
+
+        /* brand text */
+        .ys-brand-text {
+            font-size: 1.5rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            position: relative;
+            background: linear-gradient(90deg, #2563eb, #4f46e5, #2563eb);
+            background-size: 200% auto;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            /* animation:ysBrandGradient 4s linear infinite; */
+        }
+
+        /* highlight second word */
+        .ys-brand-text span {
+            font-weight: 900;
+        }
+
+
+
+        /* subtle glow */
+        .ys-brand-text::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            filter: blur(12px);
+            opacity: 0.2;
+        }
+
+        /* nav */
+        .ys-nav {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+
+        /* links */
+        .ys-nav a {
+            position: relative;
+            text-decoration: none;
+            color: #374151;
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+
+        /* hover underline animation */
+        .ys-nav a::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -6px;
+            width: 0%;
+            height: 2px;
+            background: #2563eb;
+            transition: 0.3s;
+        }
+
+        .ys-nav a:hover {
+            color: #2563eb;
+        }
+
+        .ys-nav a:hover::after {
+            width: 100%;
+        }
+
+        /* CTA BUTTON */
+        .ys-btn-download {
+            background: #2563eb;
+            color: white !important;
+            padding: 10px 22px;
+            border-radius: 40px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 600;
+        }
+
+        /* arrow animation */
+        .ys-btn-download i {
+            animation: ysArrow 1.4s infinite;
+        }
+
+        @keyframes ysArrow {
+
+            0% {
+                transform: translateY(0)
+            }
+
+            50% {
+                transform: translateY(4px)
+            }
+
+            100% {
+                transform: translateY(0)
+            }
+
+        }
+
+        /* hover */
+        .ys-btn-download:hover {
+            background: #1e40af;
+        }
+
+        /* mobile toggle */
+        .ys-menu-toggle {
+            display: none;
+            font-size: 1.6rem;
+            cursor: pointer;
+        }
+
+        /* mobile nav */
+        .ys-mobile-nav {
+            max-height: 0;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            background: white;
+            transition: 0.35s;
+        }
+
+        .ys-mobile-nav a {
+            padding: 14px 20px;
+            border-top: 1px solid #eee;
+            text-decoration: none;
+            color: #333;
+        }
+
+        /* mobile CTA */
+        .ys-btn-mobile {
+            background: #2563eb;
+            color: white !important;
+            text-align: center;
+            margin: 16px;
+            border-radius: 30px;
+        }
+
+        /* active */
+        .ys-mobile-nav.active {
+            max-height: 400px;
+        }
+
+        /* responsive */
+        @media(max-width:900px) {
+
+            .ys-nav {
+                display: none;
+            }
+
+            .ys-menu-toggle {
+                display: block;
+            }
+
+        }
+
+        /* header end  */
+
+        /* headings with gradient */
+        .gradient-text {
+            background: linear-gradient(130deg, #1f2b5c, #2c3e9b, #3a4eba);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            display: inline-block;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+
+        h1 {
+            font-size: 3.2rem;
+            line-height: 1.2;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+
+        h2 {
+            font-size: 2.4rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        h2:after {
+            content: '';
+            display: block;
+            width: 70px;
+            height: 4px;
+            background: linear-gradient(90deg, #3a4eba, #7b8cde, #b1c2ff);
+            border-radius: 4px;
+            margin-top: 0.5rem;
+        }
+
+        .section-margin {
+            margin-bottom: 5rem;
+        }
+
+        /* cards & containers */
+        .card-glass {
+            background: rgba(255, 255, 255, 0.75);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 2rem;
+            box-shadow: 0 20px 35px -8px rgba(0, 20, 60, 0.15), 0 0 0 1px rgba(255, 255, 255, 0.5) inset;
+            padding: 2rem;
+            transition: transform 0.2s ease;
+        }
+
+        .card-glass:hover {
+            transform: translateY(-4px);
+        }
+
+        .gradient-card {
+            background: linear-gradient(145deg, #ffffff, #f6f9ff);
+            border-radius: 2rem;
+            box-shadow: 0 25px 40px -12px rgba(28, 42, 82, 0.2);
+            padding: 2rem;
+            border: 1px solid rgba(255, 255, 255, 0.7);
+        }
+
+        .badge-gradient {
+            background: linear-gradient(110deg, #e9edff, #dfe6ff);
+            border-radius: 100px;
+            padding: 0.35rem 1rem;
+            font-weight: 500;
+            color: #1f2b5c;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.95rem;
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2.5rem;
+            align-items: center;
+        }
+
+        .grid-4 {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .flex-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .list-icon {
+            list-style: none;
+            margin-top: 1.5rem;
+        }
+
+        .list-icon li {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+            font-weight: 450;
+        }
+
+        .list-icon i {
+            color: #2c3e9b;
+            font-size: 1.3rem;
+            width: 1.8rem;
+            background: rgba(60, 80, 200, 0.1);
+            border-radius: 50%;
+            padding: 0.4rem;
+            text-align: center;
+        }
+
+        .img-rounded {
+            border-radius: 2rem;
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            box-shadow: 0 30px 35px -15px rgba(18, 30, 60, 0.3);
+            border: 3px solid rgba(255, 255, 255, 0.7);
+            transition: 0.3s;
+        }
+
+        .img-rounded:hover {
+            transform: scale(1.02);
+        }
+
+        .phase-card {
+            background: white;
+            border-radius: 1.8rem;
+            padding: 2rem 1.8rem;
+            box-shadow: 0 15px 30px -15px #1420441a;
+            border: 1px solid #ffffff;
+            transition: all 0.25s;
+            text-align: center;
+            background: linear-gradient(160deg, #ffffff, #f8faff);
+        }
+
+        .phase-card .phase-num {
+            background: linear-gradient(130deg, #2c3e9b, #3f52b0);
+            color: white;
+            width: 3.2rem;
+            height: 3.2rem;
+            border-radius: 1.2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.4rem;
+            margin: 0 auto 1.5rem auto;
+            box-shadow: 0 6px 12px #2c3e9b40;
+        }
+
+        hr.sep {
+            border: none;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #b6c4ff, transparent);
+            margin: 3rem 0;
+        }
+
+        /* responsiveness */
+        @media (max-width: 900px) {
+            h1 {
+                font-size: 2.6rem;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+
+            .grid-2 {
+                grid-template-columns: 1fr;
+            }
+
+            .grid-4 {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .grid-3 {
+                grid-template-columns: 1fr;
+            }
+
+            .page {
+                padding: 1.5rem 1.2rem 3rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .grid-4 {
+                grid-template-columns: 1fr;
+            }
+
+            .phase-card {
+                padding: 1.5rem;
+            }
+        }
+
+        .icon-circle {
+            background: #eef2ff;
+            width: 48px;
+            height: 48px;
+            border-radius: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #2c3e9b;
+            font-size: 1.5rem;
+        }
+
+        .model-tag {
+            background: rgba(44, 62, 155, 0.05);
+            border-radius: 100px;
+            padding: 0.5rem 1.2rem;
+            font-weight: 500;
+            border: 1px solid rgba(44, 62, 155, 0.15);
+            backdrop-filter: blur(4px);
+        }
+
+        /* ===== Mission Vision Section ===== */
+
+        .ys-mv-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2.5rem;
+            margin-bottom: 5rem;
+        }
+
+        /* glass cards */
+
+        .ys-glass-card {
+
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+
+            border-radius: 28px;
+            padding: 32px;
+
+            border: 1px solid rgba(255, 255, 255, 0.4);
+
+            box-shadow:
+                0 10px 30px rgba(0, 0, 0, 0.08),
+                inset 0 0 0 1px rgba(255, 255, 255, 0.3);
+
+            transition: all .35s ease;
+        }
+
+        .ys-glass-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
+        }
+
+        /* header */
+
+        .ys-card-head {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 18px;
+        }
+
+        .ys-icon-wrap {
+            width: 46px;
+            height: 46px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 50%;
+
+            background: linear-gradient(135deg, #3647a7, #1f2b5c);
+            color: white;
+            font-size: 18px;
+        }
+
+        /* title */
+
+        .ys-card-title {
+
+            font-size: 28px;
+            font-weight: 600;
+
+            background: linear-gradient(130deg, #1f2b5c, #3647a7);
+            background-clip: text;
+            color: transparent;
+        }
+
+        /* paragraph */
+
+        .ys-card-text {
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 18px;
+            color: #2a355a;
+        }
+
+        /* badges */
+
+        .ys-badge-row {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .ys-badge {
+            background: rgba(54, 71, 167, 0.08);
+            border: 1px solid rgba(54, 71, 167, 0.15);
+
+            padding: 8px 14px;
+            border-radius: 999px;
+
+            font-size: 14px;
+            font-weight: 500;
+
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        /* vision list */
+
+        .ys-vision-list {
+            list-style: none;
+            padding: 0;
+            margin-top: 10px;
+        }
+
+        .ys-vision-list li {
+
+            display: flex;
+            align-items: center;
+
+            gap: 10px;
+            margin-bottom: 10px;
+
+            font-size: 16px;
+        }
+
+        .ys-vision-list i {
+            color: #3647a7;
+            font-size: 16px;
+        }
+
+        /* responsive */
+
+        @media(max-width:900px) {
+
+            .ys-mv-section {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+
+
+        /* ===== ROADMAP SECTION ===== */
+
+        .ys-roadmap-wrap {
+
+            margin: 6rem 0;
+            /* text-align: center; */
+            position: relative;
+
+        }
+
+        /* title */
+
+        .ys-roadmap-title {
+
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 4rem;
+
+            background: linear-gradient(120deg, #1f2b5c, #4f6dff);
+            background-clip: text;
+            color: transparent;
+
+        }
+
+        /* timeline */
+
+        .ys-roadmap-track {
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            text-align: center;
+            max-width: 900px;
+            margin: auto;
+            position: relative;
+
+        }
+
+        /* center line */
+
+        .ys-roadmap-track::before {
+
+            content: "";
+            position: absolute;
+
+            top: 30px;
+            left: 0;
+            right: 0;
+
+            height: 4px;
+
+            background: linear-gradient(90deg,
+                    #4f6dff,
+                    #8aa0ff,
+                    #4f6dff);
+
+            border-radius: 10px;
+
+        }
+
+        /* node */
+
+        .ys-roadmap-node {
+
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            animation: ysRoadFade 1s ease forwards;
+
+        }
+
+        /* circle number */
+
+        .ys-roadmap-dot {
+
+            width: 60px;
+            height: 60px;
+
+            border-radius: 50%;
+
+            background: linear-gradient(135deg, #3647a7, #1f2b5c);
+            color: white;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-size: 22px;
+            font-weight: 700;
+
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+
+            margin-bottom: 20px;
+
+            transition: 0.4s;
+
+        }
+
+        /* card */
+
+        .ys-roadmap-card {
+
+            background: white;
+
+            padding: 22px 26px;
+
+            border-radius: 16px;
+
+            width: 230px;
+
+            box-shadow:
+                0 12px 30px rgba(0, 0, 0, 0.08);
+
+            transition: 0.35s;
+
+        }
+
+        /* hover animation */
+
+        .ys-roadmap-node:hover .ys-roadmap-card {
+
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+
+        }
+
+        .ys-roadmap-node:hover .ys-roadmap-dot {
+
+            transform: scale(1.15);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+
+        }
+
+        /* text */
+
+        .ys-roadmap-card h3 {
+
+            font-size: 20px;
+            margin-bottom: 6px;
+            color: #1f2b5c;
+
+        }
+
+        .ys-roadmap-card p {
+
+            font-size: 14px;
+            color: #4a5675;
+
+        }
+
+        /* animation */
+
+        @keyframes ysRoadFade {
+
+            from {
+
+                opacity: 0;
+                transform: translateY(30px);
+
+            }
+
+            to {
+
+                opacity: 1;
+                transform: translateY(0);
+
+            }
+
+        }
+
+        /* mobile */
+
+        @media(max-width:800px) {
+
+            .ys-roadmap-track {
+
+                flex-direction: column;
+                gap: 40px;
+
+            }
+
+            .ys-roadmap-track::before {
+
+                display: none;
+
+            }
+
+        }
+
+        /* footerstart */
+
+        .ys-footer {
+            background: linear-gradient(180deg, #0f172a, #020617);
+            color: #d1d5db;
+            padding: 70px 30px 25px;
+        }
+
+        /* GRID */
+
+        .ys-footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1.5fr;
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        /* BRAND */
+
+        .ys-footer-logo {
+            width: 50px;
+            margin-bottom: 10px;
+            border-radius: 10%;
+        }
+
+        .ys-brand-name {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 8px;
+        }
+
+        .ys-footer-desc {
+            font-size: .9rem;
+            color: #9ca3af;
+            margin-bottom: 20px;
+        }
+
+        /* SOCIAL */
+
+        .ys-footer-social a {
+            margin-right: 12px;
+            font-size: 18px;
+            color: #9ca3af;
+            transition: .3s;
+        }
+
+        .ys-footer-social a:hover {
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        /* LINKS */
+
+        .ys-footer-col h4 {
+            color: white;
+            margin-bottom: 15px;
+        }
+
+        .ys-footer-col a {
+            display: block;
+            margin-bottom: 8px;
+            text-decoration: none;
+            color: #9ca3af;
+            font-size: .9rem;
+            transition: .3s;
+        }
+
+        /* .ys-footer-col a:hover {
+    color: white;
+    padding-left: 4px;
+} */
+
+        /* APP BUTTONS */
+
+        .ys-app-buttons {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+            color: white !important;
+        }
+
+        .ys-playstore,
+        .ys-appstore {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 16px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: .9rem;
+            font-weight: 600;
+
+        }
+
+        .ys-playstore {
+            background: #16a34a;
+            color: white !important;
+        }
+
+        .ys-appstore {
+            background: white;
+            color: black !important;
+        }
+
+        .ys-playstore:hover {
+            background: #16a34a;
+            transform: none !important;
+        }
+
+        .ys-appstore:hover {
+            background: #e5e7eb;
+        }
+
+        /* QUOTE */
+
+        .ys-footer-quote {
+            text-align: center;
+            font-style: italic;
+            color: #9ca3af;
+            margin-bottom: 30px;
+            font-size: .95rem;
+        }
+
+        /* BOTTOM */
+
+        .ys-footer-bottom {
+            border-top: 1px solid #1f2937;
+            padding-top: 20px;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            font-size: .85rem;
+        }
+
+        .ys-footer-links a {
+            margin-left: 15px;
+            color: #9ca3af;
+            text-decoration: none;
+        }
+
+        .ys-footer-links a:hover {
+            color: white;
+        }
+
+        @media(max-width:900px) {
+
+            .ys-footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+        }
+
+        @media(max-width:600px) {
+
+            .ys-footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .ys-footer-bottom {
+                flex-direction: column;
+                gap: 10px;
+                text-align: center;
+            }
+
+            .ys-footer-links a {
+                margin: 0 8px;
+            }
+
+        }
+
+        /* footer end  */
+    </style>
+</head>
+
+<body>
+    <header class="ys-header">
+
+        <div class="ys-container ys-header-inner">
+
+            <!-- Logo -->
+            <div class="ys-brand">
+                <img src="gallery/ys_color_fav.png" alt="YuroShoppy Logo">
+
+                <h1 class="ys-brand-text">
+                    Yuro<span>Shoppy</span>
+                </h1>
+            </div>
+
+            <!-- Desktop Menu -->
+            <nav class="ys-nav">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="partnership.html">Business Models</a>
+                <a href="deliveryprocess.html">Delivery</a>
+                <a href="index.html#yscontact">Contact</a>
+                <a href="vendor.html">Vendor</a>
+
+                <a href="#" class="ys-btn-download">
+                    Download App
+                    <i class="fas fa-arrow-down"></i>
+                </a>
+            </nav>
+
+            <!-- Mobile Menu Button -->
+            <div class="ys-menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="ys-mobile-nav">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="partnership.html">Business Models</a>
+            <a href="deliveryprocess.html">Delivery</a>
+            <a href="index.html#yscontact">Contact</a>
+            <a href="vendor.html">Vendor</a>
+
+            <a href="#" class="ys-btn-mobile">
+                Download App
+                <i class="fas fa-arrow-down"></i>
+            </a>
+        </div>
+
+    </header>
+
+    <main class="page">
+        <!-- NO HEADER / NO FOOTER — pure content sections -->
+
+        <!-- WHO WE ARE (hero section) -->
+        <div class="section-margin">
+            <div class="grid-2">
+                <!-- left text -->
+                <div>
+                    <h1 class="gradient-text" style="font-size: 2.8rem; margin-bottom: 0.75rem;">Yuro Shoppy</h1>
+                    <p class="gradient-text"
+                        style="font-size: 1.4rem; font-weight: 500; margin-bottom: 1.2rem; background: linear-gradient(135deg,#212c5e,#3647a7); -webkit-background-clip:text; background-clip:text;">
+                        fast-growing hyperlocal commerce</p>
+                    <p style="font-size: 1.1rem; margin-bottom: 1.2rem; color: #1e2642;">We connect customers, local
+                        sellers, and delivery hubs through a smart technology platform that makes everyday shopping
+                        simple, reliable, and fast. Starting across Tamil Nadu, our mission is to build a
+                        next‑generation retail ecosystem.</p>
+                    <ul class="list-icon">
+                        <li><i class="fas fa-store-alt"></i> Local businesses</li>
+                        <li><i class="fas fa-truck-fast"></i> Smart logistics</li>
+                        <li><i class="fas fa-tag"></i> Affordable pricing</li>
+                        <li><i class="fas fa-mobile-screen-button"></i> Seamless app-based ordering</li>
+                    </ul>
+                </div>
+                <!-- right image (online image) -->
+                <div>
+                    <img class="img-rounded" src="gallery/home-img.png" alt="fast delivery with groceries"
+                        loading="lazy" style="max-height: 500px; width:100%; object-position: center;">
+                </div>
+            </div>
+        </div>
+
+        <!-- WHAT WE DO -->
+        <div class="section-margin">
+            <h2 class="gradient-text">What We Do</h2>
+            <div class="card-glass" style="padding: 2.2rem;">
+                <p style="font-size: 1.2rem; margin-bottom: 2rem; font-weight: 450;">We enable customers to order
+                    <strong>groceries, daily essentials, local products & trending deals</strong> — delivered quickly
+                    from nearby fulfillment hubs.
+                </p>
+
+                <!-- product categories (4) -->
+                <div class="grid-4" style="margin-bottom: 2.5rem;">
+                    <div class="badge-gradient"
+                        style="justify-content: center; padding: 1.2rem 0.5rem; border-radius: 1.5rem; flex-direction: column; gap: 0.4rem; background: white; box-shadow: 0 8px 18px #d5deff;">
+                        <i class="fas fa-carrot" style="font-size: 1.8rem; color:#2c3e9b;"></i>
+                        <span style="font-weight: 600;">Groceries</span>
+                    </div>
+                    <div class="badge-gradient"
+                        style="justify-content: center; padding: 1.2rem 0.5rem; border-radius: 1.5rem; flex-direction: column; gap: 0.4rem; background: white; box-shadow: 0 8px 18px #d5deff;">
+                        <i class="fas fa-box" style="font-size: 1.8rem; color:#2c3e9b;"></i>
+                        <span style="font-weight: 600;">Daily essentials</span>
+                    </div>
+                    <div class="badge-gradient"
+                        style="justify-content: center; padding: 1.2rem 0.5rem; border-radius: 1.5rem; flex-direction: column; gap: 0.4rem; background: white; box-shadow: 0 8px 18px #d5deff;">
+                        <i class="fas fa-hand-holding-heart" style="font-size: 1.8rem; color:#2c3e9b;"></i>
+                        <span style="font-weight: 600;">Local products</span>
+                    </div>
+                    <div class="badge-gradient"
+                        style="justify-content: center; padding: 1.2rem 0.5rem; border-radius: 1.5rem; flex-direction: column; gap: 0.4rem; background: white; box-shadow: 0 8px 18px #d5deff;">
+                        <i class="fas fa-fire" style="font-size: 1.8rem; color:#2c3e9b;"></i>
+                        <span style="font-weight: 600;">Trending deals</span>
+                    </div>
+                </div>
+
+                <!-- hybrid model description + benefits -->
+                <div
+                    style="background: linear-gradient(120deg, #eef3ff, #ffffff); border-radius: 1.8rem; padding: 1.8rem;">
+                    <div
+                        style="display: flex; flex-wrap: wrap; gap: 2rem; justify-content: space-between; align-items: center;">
+                        <div>
+                            <span style="font-weight: 600; font-size: 1.1rem; display: block; margin-bottom: 0.8rem;"><i
+                                    class="fas fa-diagram-project"
+                                    style="color:#2c3e9b; margin-right: 0.5rem;"></i>Hybrid commerce model</span>
+                            <div class="flex-row" style="gap: 0.8rem;">
+                                <span class="model-tag"><i class="fas fa-warehouse"
+                                        style="margin-right: 0.4rem;"></i>Centralized inventory</span>
+                                <span class="model-tag"><i class="fas fa-shop"
+                                        style="margin-right: 0.4rem;"></i>Marketplace sellers</span>
+                                <span class="model-tag"><i class="fas fa-bicycle"
+                                        style="margin-right: 0.4rem;"></i>Hyperlocal delivery</span>
+                            </div>
+                        </div>
+                        <div class="flex-row" style="gap: 1rem;">
+                            <span class="badge-gradient" style="background: #1f2b5c; color: white; border: none;"><i
+                                    class="fas fa-gauge-high"></i> Speed</span>
+                            <span class="badge-gradient" style="background: #1f2b5c; color: white; border: none;"><i
+                                    class="fas fa-star"></i> Quality</span>
+                            <span class="badge-gradient" style="background: #1f2b5c; color: white; border: none;"><i
+                                    class="fas fa-coins"></i> Competitive</span>
+                        </div>
+                    </div>
+                    <p style="margin-top: 1.4rem; color: #1e2642;"><i class="fas fa-location-dot"
+                            style="color:#3a4eba; margin-right: 0.4rem;"></i> Delivered quickly from nearby fulfillment
+                        hubs — maintaining speed, quality & competitive pricing.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- MISSION + VISION side by side -->
+        <div class="ys-mv-section">
+
+            <!-- Mission -->
+            <div class="ys-glass-card ys-mission-card">
+
+                <div class="ys-card-head">
+                    <span class="ys-icon-wrap"><i class="fas fa-bullseye"></i></span>
+                    <h3 class="ys-card-title">Our Mission</h3>
+                </div>
+
+                <p class="ys-card-text">
+                    To make everyday shopping <strong>faster, smarter, more affordable,
+                        and more accessible</strong> for every household in Tamil Nadu
+                    and beyond.
+                </p>
+
+                <div class="ys-badge-row">
+                    <span class="ys-badge"><i class="far fa-clock"></i> Faster</span>
+                    <span class="ys-badge"><i class="fas fa-brain"></i> Smarter</span>
+                    <span class="ys-badge"><i class="fas fa-wallet"></i> Affordable</span>
+                    <span class="ys-badge"><i class="fas fa-door-open"></i> Accessible</span>
+                </div>
+
+            </div>
+
+            <!-- Vision -->
+            <div class="ys-glass-card ys-vision-card">
+
+                <div class="ys-card-head">
+                    <span class="ys-icon-wrap"><i class="fas fa-eye"></i></span>
+                    <h3 class="ys-card-title">Our Vision</h3>
+                </div>
+
+                <p class="ys-card-text">
+                    To become India’s most trusted hyperlocal shopping platform,
+                    empowering:
+                </p>
+
+                <ul class="ys-vision-list">
+
+                    <li>
+                        <i class="fas fa-user-check"></i>
+                        Customers with fast delivery
+                    </li>
+
+                    <li>
+                        <i class="fas fa-shop"></i>
+                        Local sellers with digital growth
+                    </li>
+
+                    <li>
+                        <i class="fas fa-people-group"></i>
+                        Communities with smarter commerce
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+        <!-- ROADMAP -->
+        <div class="ys-roadmap-wrap">
+
+            <h2 class="ys-roadmap-title">Our Roadmap</h2>
+
+            <div class="ys-roadmap-track">
+
+                <!-- Phase 1 -->
+                <div class="ys-roadmap-node">
+                    <div class="ys-roadmap-dot">1</div>
+
+                    <div class="ys-roadmap-card">
+                        <h3>Tamil Nadu</h3>
+                        <p>Phase 1 – Tamil Nadu Expansion</p>
+                    </div>
+                </div>
+
+                <!-- Phase 2 -->
+                <div class="ys-roadmap-node">
+                    <div class="ys-roadmap-dot">2</div>
+
+                    <div class="ys-roadmap-card">
+                        <h3>South India</h3>
+                        <p>Phase 2 – Multi-City South India</p>
+                    </div>
+                </div>
+
+                <!-- Phase 3 -->
+                <div class="ys-roadmap-node">
+                    <div class="ys-roadmap-dot">3</div>
+
+                    <div class="ys-roadmap-card">
+                        <h3>Pan-India</h3>
+                        <p>Phase 3 – Pan-India Hyperlocal Network</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- extra subtle separator (not a footer) -->
+        <hr class="sep">
+
+        <!-- small tagline – still no footer, just a graceful closing line -->
+        <div style="text-align: center; margin-top: 2rem;">
+            <span
+                style="background: linear-gradient(130deg, #1f2b5c, #3647a7); -webkit-background-clip: text; background-clip: text; color: transparent; font-weight: 600; letter-spacing: 0.3px;">⚡
+                Yuro Shoppy · hyperlocal commerce redefined ⚡</span>
+        </div>
+        <!-- absolutely no header / footer elements (no nav, no copyright, no links) -->
+    </main>
+    <footer class="ys-footer">
+
+        <div class="ys-container">
+
+            <div class="ys-footer-grid">
+
+                <!-- BRAND -->
+                <div class="ys-footer-brand">
+
+                    <img src="gallery/ys_color_fav.png" alt="Yuro Shoppy" class="ys-footer-logo">
+
+                    <h3 class="ys-brand-name">Yuro Shoppy</h3>
+                    <p class="ys-footer-desc">
+                        +91 7010704215
+                    </p>
+                    <p class="ys-footer-desc">
+                        Fast delivery • Quality products • Affordable prices across Tamil Nadu.
+                    </p>
+
+                    <div class="ys-footer-social">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-x-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+
+                </div>
+
+
+                <!-- NAVIGATION -->
+                <div class="ys-footer-col">
+                    <h4>Explore</h4>
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About Us</a>
+                    <a href="partnership.html">Business Models</a>
+                    <a href="deliveryprocess.html">Delivery Process</a>
+                    <a href="index.html#yscontact">Careers</a>
+                </div>
+
+
+                <!-- CUSTOMER -->
+                <div class="ys-footer-col">
+                    <h4>Customer</h4>
+                    <a href="#">Contact Support</a>
+                    <a href="#">Order Tracking</a>
+                    <a href="#">Shipping Policy</a>
+                    <a href="#">Returns & Refunds</a>
+                    <a href="#">Help Center</a>
+                </div>
+
+
+                <!-- APP DOWNLOAD -->
+                <div class="ys-footer-col ys-app-section">
+
+                    <h4>Get the App</h4>
+
+                    <p>Download Yuro Shoppy for faster shopping.</p>
+
+                    <div class="ys-app-buttons">
+
+                        <a href="#" class="ys-playstore">
+                            <i class="fab fa-google-play"></i>
+                            <span>Google Play</span>
+                        </a>
+
+                        <a href="#" class="ys-appstore">
+                            <i class="fab fa-apple"></i>
+                            <span>App Store</span>
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- QUOTE -->
+
+            <div class="ys-footer-quote">
+                “Shopping should be fast, simple, and accessible for everyone.”
+            </div>
+
+
+            <!-- BOTTOM -->
+
+            <div class="ys-footer-bottom">
+
+                <span>© 2026 Yuro Shoppy. All rights reserved.</span>
+
+                <div class="ys-footer-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Refund Policy</a>
+                </div>
+
+            </div>
+
+        </div>
+
+    </footer>
+    <script>
+        const toggle = document.querySelector(".ys-menu-toggle");
+        const mobileNav = document.querySelector(".ys-mobile-nav");
+
+        toggle.addEventListener("click", () => {
+            mobileNav.classList.toggle("active");
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,1504 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>Yuro Shoppy · partnership models</title>
+    <!-- Google Font & Font Awesome -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="shortcut icon" href="gallery/ys_color_fav.png" type="image/x-icon">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Poppins", sans-serif;
+            background: #f4f7fc;
+            color: #1e2f40;
+            line-height: 1.5;
+        }
+
+        .page-container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
+
+
+        /* HEADER */
+        .ys-header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(14px);
+            background: rgba(255, 255, 255, 0.75);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        
+        /* inner */
+        .ys-header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px;
+        }
+
+        /* brand */
+        /* BRAND AREA */
+        .ys-brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* logo */
+        .ys-brand img {
+            /* width: 38px; */
+            width: 45px;
+            filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.15));
+            border-radius: 50%;
+
+            /* transition:0.3s; */
+        }
+
+        /* brand text */
+        .ys-brand-text {
+            font-size: 1.5rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            position: relative;
+            background: linear-gradient(90deg, #2563eb, #4f46e5, #2563eb);
+            background-size: 200% auto;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            /* animation:ysBrandGradient 4s linear infinite; */
+        }
+
+        /* highlight second word */
+        .ys-brand-text span {
+            font-weight: 900;
+        }
+
+
+
+        /* subtle glow */
+        .ys-brand-text::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            filter: blur(12px);
+            opacity: 0.2;
+        }
+
+        /* nav */
+        .ys-nav {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+
+        /* links */
+        .ys-nav a {
+            position: relative;
+            text-decoration: none;
+            color: #374151;
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+
+        /* hover underline animation */
+        .ys-nav a::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -6px;
+            width: 0%;
+            height: 2px;
+            background: #2563eb;
+            transition: 0.3s;
+        }
+
+        .ys-nav a:hover {
+            color: #2563eb;
+        }
+
+        .ys-nav a:hover::after {
+            width: 100%;
+        }
+
+        /* CTA BUTTON */
+        .ys-btn-download {
+            background: #2563eb;
+            color: white !important;
+            padding: 10px 22px;
+            border-radius: 40px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 600;
+        }
+
+        /* arrow animation */
+        .ys-btn-download i {
+            animation: ysArrow 1.4s infinite;
+        }
+
+        @keyframes ysArrow {
+
+            0% {
+                transform: translateY(0)
+            }
+
+            50% {
+                transform: translateY(4px)
+            }
+
+            100% {
+                transform: translateY(0)
+            }
+
+        }
+
+        /* hover */
+        .ys-btn-download:hover {
+            background: #1e40af;
+        }
+
+        /* mobile toggle */
+        .ys-menu-toggle {
+            display: none;
+            font-size: 1.6rem;
+            cursor: pointer;
+        }
+
+        /* mobile nav */
+        .ys-mobile-nav {
+            max-height: 0;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            background: white;
+            transition: 0.35s;
+        }
+
+        .ys-mobile-nav a {
+            padding: 14px 20px;
+            border-top: 1px solid #eee;
+            text-decoration: none;
+            color: #333;
+        }
+
+        /* mobile CTA */
+        .ys-btn-mobile {
+            background: #2563eb;
+            color: white !important;
+            text-align: center;
+            margin: 16px;
+            border-radius: 30px;
+        }
+
+        /* active */
+        .ys-mobile-nav.active {
+            max-height: 400px;
+        }
+
+        /* responsive */
+        @media(max-width:900px) {
+
+            .ys-nav {
+                display: none;
+            }
+
+            .ys-menu-toggle {
+                display: block;
+            }
+
+        }
+
+
+
+
+
+        /* headings */
+        .section-title {
+            font-size: 2.3rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            color: #0e2b3f;
+            margin-bottom: 0.5rem;
+        }
+
+        .section-subhead {
+            font-size: 1.2rem;
+            color: #2d577b;
+            border-left: 5px solid #1b7f7a;
+            padding-left: 1.2rem;
+            margin-bottom: 2.2rem;
+        }
+
+        /* ----- CAROUSEL (DESKTOP cover flow) ----- */
+        .carousel-wrapper {
+            position: relative;
+            margin: 3rem 0 5rem;
+            padding: 0 2.5rem;
+        }
+
+        .carousel-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            min-height: 580px;
+        }
+
+        .carousel-card {
+            flex: 0 0 280px;
+            background: white;
+            border-radius: 2rem;
+            padding: 1.8rem 1.5rem;
+            box-shadow: 0 20px 35px -10px rgba(0, 40, 70, 0.2);
+            transition: all 0.4s ease;
+            border: 1px solid rgba(60, 130, 140, 0.2);
+            backdrop-filter: blur(2px);
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            transform-origin: center;
+        }
+
+        .carousel-card.center {
+            flex: 0 0 360px;
+            background: #ffffff;
+            border: 2px solid #1b7f7a;
+            box-shadow: 0 30px 50px -15px #0b5f5b;
+            transform: scale(1.02);
+            z-index: 10;
+            cursor: default;
+        }
+
+        .carousel-card:not(.center) {
+            opacity: 0.65;
+            filter: blur(0.5px);
+            transform: scale(0.92);
+            background: #f2f9ff;
+        }
+
+        .carousel-card:not(.center):hover {
+            opacity: 0.9;
+            transform: scale(0.95);
+            border-color: #389b98;
+        }
+
+        /* card content */
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .card-header i {
+            font-size: 2.2rem;
+            color: #1b7f7a;
+            background: #dcf3f2;
+            padding: 0.7rem;
+            border-radius: 20px;
+        }
+
+        .card-header h3 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #0e2b3f;
+        }
+
+        .center .full-content {
+            display: block;
+        }
+
+        .side-content {
+            display: none;
+        }
+
+        .carousel-card:not(.center) .full-content {
+            display: none;
+        }
+
+        .carousel-card:not(.center) .side-content {
+            display: block;
+            text-align: center;
+        }
+
+        .side-content p {
+            margin-top: 0.8rem;
+            font-size: 1rem;
+            color: #1a405b;
+            font-weight: 500;
+        }
+
+        .side-content .small-cta {
+            font-size: 0.9rem;
+            color: #1b7f7a;
+            margin-top: 1rem;
+            font-weight: 600;
+        }
+
+        .benefits-req-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        .benefits-list,
+        .req-list {
+            list-style: none;
+        }
+
+        .benefits-list li,
+        .req-list li {
+            font-size: 0.9rem;
+            margin-bottom: 0.4rem;
+            display: flex;
+            gap: 0.4rem;
+        }
+
+        .benefits-list i {
+            color: #1b7f7a;
+        }
+
+        .req-list i {
+            color: #cc7b2c;
+        }
+
+        .who-how {
+            background: #edf5fc;
+            padding: 1rem;
+            border-radius: 1rem;
+            font-size: 0.9rem;
+            margin: 1rem 0 1.2rem;
+        }
+
+        .eligibility-btn {
+            background: transparent;
+            border: 2px solid #1b7f7a;
+            color: #1b7f7a;
+            font-weight: 700;
+            padding: 0.8rem;
+            border-radius: 40px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            width: 100%;
+            margin-top: auto;
+        }
+
+        .eligibility-btn:hover {
+            background: #1b7f7a;
+            color: white;
+        }
+
+        /* desktop arrows */
+        .carousel-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 48px;
+            height: 48px;
+            background: white;
+            border: 1px solid #cbdde9;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: #1b7f7a;
+            cursor: pointer;
+            box-shadow: 0 8px 16px rgba(0, 40, 60, 0.08);
+            transition: 0.2s;
+            z-index: 20;
+        }
+
+        .carousel-arrow:hover {
+            background: #1b7f7a;
+            color: white;
+            border-color: #1b7f7a;
+        }
+
+        .arrow-left {
+            left: 0;
+        }
+
+        .arrow-right {
+            right: 0;
+        }
+
+        /* ----- MODERN MOBILE VIEW (swipeable carousel) ----- */
+        @media (max-width: 900px) {
+            .carousel-wrapper {
+                padding: 0 0.5rem;
+                margin: 2rem 0 3rem;
+            }
+
+            .carousel-container {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: nowrap;
+                overflow-x: auto;
+                scroll-snap-type: x mandatory;
+                gap: 1rem;
+                padding: 1rem 0.5rem 1.5rem;
+                min-height: auto;
+                scrollbar-width: thin;
+                -webkit-overflow-scrolling: touch;
+                justify-content: flex-start;
+                /* override center for mobile */
+            }
+
+            .carousel-card {
+                flex: 0 0 80%;
+                scroll-snap-align: center;
+                opacity: 1;
+                filter: none;
+                transform: none;
+                background: white;
+                border: 2px solid #e1eff8;
+                box-shadow: 0 15px 25px -8px rgba(0, 45, 65, 0.12);
+                margin-right: 0;
+                transition: transform 0.2s;
+                cursor: default;
+                min-height: 520px;
+            }
+
+            .carousel-card.center {
+                flex: 0 0 80%;
+                border: 2px solid #1b7f7a;
+                transform: scale(1.02);
+                box-shadow: 0 20px 30px -8px #0b5f5b70;
+            }
+
+            .carousel-card:not(.center) {
+                opacity: 0.9;
+                background: white;
+                border: 2px solid #d6e4f0;
+            }
+
+            /* hide side-content on mobile, always show full details */
+            .carousel-card .full-content {
+                display: block !important;
+            }
+
+            .carousel-card .side-content {
+                display: none !important;
+            }
+
+            /* hide desktop arrows on mobile */
+            .carousel-arrow {
+                display: none;
+            }
+
+            /* adjust card inner spacing for mobile */
+            .carousel-card {
+                padding: 1.5rem 1.2rem;
+            }
+
+            .card-header h3 {
+                font-size: 1.6rem;
+            }
+
+            .benefits-req-grid {
+                gap: 0.8rem;
+            }
+
+            .eligibility-btn {
+                padding: 0.9rem;
+                font-size: 1rem;
+            }
+        }
+
+        /* small mobile tweaks */
+        @media (max-width: 500px) {
+            .carousel-card {
+                flex: 0 0 90%;
+                min-height: 540px;
+            }
+
+            .section-title {
+                font-size: 1.9rem;
+            }
+        }
+
+        /* ----- ELIGIBILITY SECTION (modern, compact) ----- */
+        .elig-general {
+            background: white;
+            border-radius: 2rem;
+            padding: 2rem 1.8rem;
+            margin: 3rem 0 2rem;
+            box-shadow: 0 12px 28px rgba(0, 45, 65, 0.06);
+            border: 1px solid #d2e3f2;
+        }
+
+        .criteria-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+        }
+
+        .criteria-col p {
+            font-weight: 600;
+            color: #0f3857;
+            margin-bottom: 0.8rem;
+            font-size: 1rem;
+        }
+
+        .criteria-col ul {
+            list-style: none;
+        }
+
+        .criteria-col li {
+            font-size: 0.9rem;
+            margin-bottom: 0.6rem;
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .criteria-col i {
+            color: #1b7f7a;
+            width: 1.1rem;
+        }
+
+        .prohibited i {
+            color: #c94a4a;
+        }
+
+        .model-elig-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.8rem;
+            margin: 2rem 0 1rem;
+        }
+
+        .model-elig-card {
+            background: white;
+            border-radius: 1.8rem;
+            padding: 2rem 1.5rem;
+            border: 1px solid #d1e0ee;
+            transition: all 0.2s;
+        }
+
+        .model-elig-card h4 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            color: #0e2b3f;
+        }
+
+        .model-elig-card h4 i {
+            color: #1b7f7a;
+        }
+
+        .elig-list {
+            list-style: none;
+        }
+
+        .elig-list li {
+            margin-bottom: 0.9rem;
+            display: flex;
+            gap: 0.7rem;
+            font-size: 0.95rem;
+        }
+
+        .elig-list i.fa-check-circle {
+            color: #1b7f7a;
+        }
+
+        .highlight {
+            border: 3px solid #1b7f7a;
+            background: #f1fefc;
+        }
+
+        .small-note {
+            font-size: 0.9rem;
+            color: #3e6a8c;
+            margin-top: 1rem;
+        }
+
+        @media (max-width: 800px) {
+
+            .criteria-grid,
+            .model-elig-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .elig-general {
+                padding: 1.5rem;
+            }
+        }
+
+        hr {
+            border: 1px solid #bed6ec;
+            margin: 2rem 0;
+        }
+
+
+
+        .ys-footer {
+            background: linear-gradient(180deg, #0f172a, #020617);
+            color: #d1d5db;
+            padding: 70px 30px 25px;
+        }
+
+        /* GRID */
+
+        .ys-footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1.5fr;
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        /* BRAND */
+
+        .ys-footer-logo {
+            width: 50px;
+            margin-bottom: 10px;
+            border-radius: 10%;
+        }
+
+        .ys-brand-name {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 8px;
+        }
+
+        .ys-footer-desc {
+            font-size: .9rem;
+            color: #9ca3af;
+            margin-bottom: 20px;
+        }
+
+        /* SOCIAL */
+
+        .ys-footer-social a {
+            margin-right: 12px;
+            font-size: 18px;
+            color: #9ca3af;
+            transition: .3s;
+        }
+
+        .ys-footer-social a:hover {
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        /* LINKS */
+
+        .ys-footer-col h4 {
+            color: white;
+            margin-bottom: 15px;
+        }
+
+        .ys-footer-col a {
+            display: block;
+            margin-bottom: 8px;
+            text-decoration: none;
+            color: #9ca3af;
+            font-size: .9rem;
+            transition: .3s;
+        }
+
+        /* .ys-footer-col a:hover {
+    color: white;
+    padding-left: 4px;
+} */
+
+        /* APP BUTTONS */
+
+        .ys-app-buttons {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+            color: white !important;
+        }
+
+        .ys-playstore,
+        .ys-appstore {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 16px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: .9rem;
+            font-weight: 600;
+
+        }
+
+        .ys-playstore {
+            background: #16a34a;
+            color: white !important;
+        }
+
+        .ys-appstore {
+            background: white;
+            color: black !important;
+        }
+
+        .ys-playstore:hover {
+            background: #16a34a;
+            transform: none !important;
+        }
+
+        .ys-appstore:hover {
+            background: #e5e7eb;
+        }
+
+        /* QUOTE */
+
+        .ys-footer-quote {
+            text-align: center;
+            font-style: italic;
+            color: #9ca3af;
+            margin-bottom: 30px;
+            font-size: .95rem;
+        }
+
+        /* BOTTOM */
+
+        .ys-footer-bottom {
+            border-top: 1px solid #1f2937;
+            padding-top: 20px;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            font-size: .85rem;
+        }
+
+        .ys-footer-links a {
+            margin-left: 15px;
+            color: #9ca3af;
+            text-decoration: none;
+        }
+
+        .ys-footer-links a:hover {
+            color: white;
+        }
+
+        @media(max-width:900px) {
+
+            .ys-footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+        }
+
+        @media(max-width:600px) {
+
+            .ys-footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .ys-footer-bottom {
+                flex-direction: column;
+                gap: 10px;
+                text-align: center;
+            }
+
+            .ys-footer-links a {
+                margin: 0 8px;
+            }
+
+        }
+
+        /* ===== MODAL BACKGROUND ===== */
+        .ys-form-modal {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.6);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            padding: 20px;
+        }
+
+        /* ===== FORM BOX ===== */
+        .ys-form-box {
+            background: white;
+            max-width: 420px;
+            width: 100%;
+            padding: 30px;
+            border-radius: 14px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.25);
+            position: relative;
+        }
+
+        .ys-form-box h2 {
+            margin-bottom: 18px;
+        }
+
+        /* inputs */
+        .ys-form-box input {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 12px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            font-size: 14px;
+        }
+
+        /* buttons */
+        .ys-form-box button {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        /* close button */
+        .ys-close-btn {
+            position: absolute;
+            right: 14px;
+            top: 10px;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        /* different colors */
+        .ys-inventory-modal .ys-form-box button {
+            background: #1b7f7a;
+            color: white;
+        }
+
+        .ys-marketplace-modal .ys-form-box button {
+            background: #2563eb;
+            color: white;
+        }
+
+        .ys-hybrid-modal .ys-form-box button {
+            background: #7c3aed;
+            color: white;
+        }
+
+        /* responsive */
+        @media(max-width:600px) {
+            .ys-form-box {
+                padding: 22px;
+            }
+        }
+
+        .model-btn-group {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 15px;
+            flex-wrap: wrap;
+        }
+
+        .ys-apply-btn {
+            background: #ffb703;
+            border: none;
+            padding: 10px 14px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            color: #0e2b3f;
+        }
+
+        .ys-apply-btn:hover {
+            background: #f59e0b;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="ys-header">
+        <div class="ys-container ys-header-inner">
+            <!-- Logo -->
+            <div class="ys-brand">
+                <img src="gallery/ys_color_fav.png" alt="YuroShoppy Logo">
+
+                <h1 class="ys-brand-text">
+                    Yuro<span>Shoppy</span>
+                </h1>
+            </div>
+
+            <!-- Desktop Menu -->
+            <nav class="ys-nav">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="partnership.html">Business Models</a>
+                <a href="deliveryprocess.html">Delivery</a>
+                <a href="index.html#yscontact">Contact</a>
+                <a href="vendor.html">Vendor</a>
+
+                <a href="#" class="ys-btn-download">
+                    Download App
+                    <i class="fas fa-arrow-down"></i>
+                </a>
+            </nav>
+
+            <!-- Mobile Menu Button -->
+            <div class="ys-menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="ys-mobile-nav">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="partnership.html">Business Models</a>
+            <a href="deliveryprocess.html">Delivery</a>
+            <a href="index.html#yscontact">Contact</a>
+            <a href="vendor.html">Vendor</a>
+
+            <a href="#" class="ys-btn-mobile">
+                Download App
+                <i class="fas fa-arrow-down"></i>
+            </a>
+        </div>
+
+    </header>
+    <main>
+
+
+        <div class="page-container">
+            <h1 class="section-title">Work With Yuro Shoppy</h1>
+            <div class="section-subhead">Flexible partnership models — now with modern mobile swipe</div>
+
+            <!-- ===== CAROUSEL (coverflow desktop + horizontal snap mobile) ===== -->
+            <div class="carousel-wrapper">
+                <div class="carousel-arrow arrow-left" id="prevArrow"><i class="fas fa-chevron-left"></i></div>
+                <div class="carousel-arrow arrow-right" id="nextArrow"><i class="fas fa-chevron-right"></i></div>
+                <div class="carousel-container" id="carouselContainer"></div>
+            </div>
+
+            <!-- ===== ELIGIBILITY SECTION ===== -->
+            <div id="eligibility-section">
+                <h2 class="section-title" style="margin-top: 1rem;">Partner Eligibility Criteria</h2>
+                <div class="section-subhead">Quality & service standards we maintain together</div>
+
+                <!-- general criteria card -->
+                <div class="elig-general">
+                    <div class="criteria-grid">
+                        <div class="criteria-col">
+                            <p>📋 Basic requirements</p>
+                            <ul>
+                                <li><i class="fas fa-chevron-right"></i> Valid business registration</li>
+                                <li><i class="fas fa-chevron-right"></i> GST (if applicable)</li>
+                                <li><i class="fas fa-chevron-right"></i> PAN / ID proof</li>
+                                <li><i class="fas fa-chevron-right"></i> Bank account for settlements</li>
+                            </ul>
+                        </div>
+                        <div class="criteria-col">
+                            <p>📦 Operational requirements</p>
+                            <ul>
+                                <li><i class="fas fa-chevron-right"></i> Reliable stock availability</li>
+                                <li><i class="fas fa-chevron-right"></i> Standard packaging materials</li>
+                                <li><i class="fas fa-chevron-right"></i> Process orders within defined time</li>
+                                <li><i class="fas fa-chevron-right"></i> Product quality compliance</li>
+                            </ul>
+                        </div>
+                        <div class="criteria-col">
+                            <p>🤝 Service expectations</p>
+                            <ul>
+                                <li><i class="fas fa-chevron-right"></i> On-time order readiness</li>
+                                <li><i class="fas fa-chevron-right"></i> Accurate product listings</li>
+                                <li><i class="fas fa-chevron-right"></i> Responsive communication</li>
+                                <li><i class="fas fa-chevron-right"></i> Customer-first approach</li>
+                            </ul>
+                        </div>
+                        <div class="criteria-col">
+                            <p>🏷️ Categories & restrictions</p>
+                            <ul>
+                                <li><i class="fas fa-check"></i> Groceries, FMCG, Household</li>
+                                <li><i class="fas fa-check"></i> Personal care, Local specialties</li>
+                                <li class="prohibited"><i class="fas fa-ban"></i> Illegal / Expired / Counterfeit</li>
+                                <li class="prohibited"><i class="fas fa-ban"></i> Restricted commodities</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- model-specific eligibility -->
+                <h3 style="font-size: 2rem; font-weight: 600; margin: 2.5rem 0 1.5rem; color: #0e2b3f;">⚡ Model‑specific
+                    eligibility</h3>
+                <div class="model-elig-grid">
+                    <div class="model-elig-card" id="elig-inventory">
+                        <h4><i class="fas fa-boxes"></i> Inventory model</h4>
+                        <ul class="elig-list">
+                            <li><i class="fas fa-check-circle"></i> Consistent product supply (volume)</li>
+                            <li><i class="fas fa-check-circle"></i> GST billing support</li>
+                            <li><i class="fas fa-check-circle"></i> Standard packaging & barcoding</li>
+                            <li><i class="fas fa-check-circle"></i> Quality assurance pre‑approval</li>
+                            <li><i class="fas fa-check-circle"></i> Brands / wholesalers / manufacturers</li>
+                            <li><i class="fas fa-circle-exclamation"></i> Stock stored in Yuro hubs</li>
+                        </ul>
+                        <div class="small-note"><i class="fas fa-clock"></i> 24/7 hub acceptance, faster dispatch</div>
+                    </div>
+                    <div class="model-elig-card" id="elig-marketplace">
+                        <h4><i class="fas fa-store"></i> Marketplace model</h4>
+                        <ul class="elig-list">
+                            <li><i class="fas fa-check-circle"></i> Active physical store location</li>
+                            <li><i class="fas fa-check-circle"></i> Min 3km serviceable radius</li>
+                            <li><i class="fas fa-check-circle"></i> Basic packaging capability</li>
+                            <li><i class="fas fa-check-circle"></i> Order readiness within 60 min</li>
+                            <li><i class="fas fa-check-circle"></i> Local retailers, kirana, home biz</li>
+                            <li><i class="fas fa-circle-exclamation"></i> No inventory transfer</li>
+                        </ul>
+                        <div class="small-note"><i class="fas fa-rocket"></i> Quick onboarding, lower cost</div>
+                    </div>
+                    <div class="model-elig-card" id="elig-hybrid">
+                        <h4><i class="fas fa-code-merge"></i> Hybrid model</h4>
+                        <ul class="elig-list">
+                            <li><i class="fas fa-check-circle"></i> Meet inventory requirements for hub SKUs</li>
+                            <li><i class="fas fa-check-circle"></i> Meet marketplace criteria for store SKUs</li>
+                            <li><i class="fas fa-check-circle"></i> Registered business (GST/PAN)</li>
+                            <li><i class="fas fa-check-circle"></i> Separate fast/slow moving catalogue</li>
+                            <li><i class="fas fa-check-circle"></i> Single dashboard & unified tracking</li>
+                            <li><i class="fas fa-circle-exclamation"></i> Ideal for growing multi‑category sellers</li>
+                        </ul>
+                        <div class="small-note"><i class="fas fa-chart-line"></i> Combine reach & storage efficiency
+                        </div>
+                    </div>
+                </div>
+                <p style="text-align: right; color: #3a6382; margin-top: 1rem;"><i class="fas fa-file-signature"></i>
+                    All
+                    partners must also meet general criteria.</p>
+            </div>
+            <hr>
+            <div style="text-align: center; color: #1b5777; font-weight: 500;">Choose your model, check eligibility —
+                grow
+                with Yuro Shoppy</div>
+        </div>
+
+        <!-- ================= INVENTORY FORM ================= -->
+        <div class="ys-form-modal ys-inventory-modal" id="ysInventoryModal">
+            <div class="ys-form-box">
+                <span class="ys-close-btn" data-close="ysInventoryModal">&times;</span>
+                <h2>Inventory Partner Form</h2>
+
+                <form id="ysInventoryForm">
+                    <input type="text" name="name" placeholder="Full Name" required>
+                    <input type="text" name="business" placeholder="Business / Brand Name" required>
+                    <input type="tel" name="phone" placeholder="Mobile Number" required>
+                    <input type="text" name="location" placeholder="City / Location" required>
+                    <input type="text" name="category" placeholder="Product Category" required>
+
+                    <button type="submit">Submit Inventory Application</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- ================= MARKETPLACE FORM ================= -->
+        <div class="ys-form-modal ys-marketplace-modal" id="ysMarketplaceModal">
+            <div class="ys-form-box">
+                <span class="ys-close-btn" data-close="ysMarketplaceModal">&times;</span>
+                <h2>Marketplace Seller Form</h2>
+
+                <form id="ysMarketplaceForm">
+                    <input type="text" name="name" placeholder="Full Name" required>
+                    <input type="text" name="store" placeholder="Store Name" required>
+                    <input type="tel" name="phone" placeholder="Mobile Number" required>
+                    <input type="text" name="location" placeholder="Store Location" required>
+                    <input type="text" name="products" placeholder="Products You Sell" required>
+
+                    <button type="submit">Submit Marketplace Application</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- ================= HYBRID FORM ================= -->
+        <div class="ys-form-modal ys-hybrid-modal" id="ysHybridModal">
+            <div class="ys-form-box">
+                <span class="ys-close-btn" data-close="ysHybridModal">&times;</span>
+                <h2>Hybrid Partner Form</h2>
+
+                <form id="ysHybridForm">
+                    <input type="text" name="name" placeholder="Full Name" required>
+                    <input type="text" name="business" placeholder="Business Name" required>
+                    <input type="tel" name="phone" placeholder="Mobile Number" required>
+                    <input type="text" name="location" placeholder="Business Location" required>
+                    <input type="text" name="categories" placeholder="Product Categories" required>
+
+                    <button type="submit">Submit Hybrid Application</button>
+                </form>
+            </div>
+        </div>
+    </main>
+    <!-- FOOTER (professional) -->
+    <footer class="ys-footer">
+
+        <div class="ys-container">
+
+            <div class="ys-footer-grid">
+
+                <!-- BRAND -->
+                <div class="ys-footer-brand">
+
+                    <img src="gallery/ys_color_fav.png" alt="Yuro Shoppy" class="ys-footer-logo">
+
+                    <h3 class="ys-brand-name">Yuro Shoppy</h3>
+                    <p class="ys-footer-desc">
+                        +91 7010704215
+                    </p>
+                    <p class="ys-footer-desc">
+                        Fast delivery • Quality products • Affordable prices across Tamil Nadu.
+                    </p>
+
+                    <div class="ys-footer-social">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-x-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+
+                </div>
+
+
+                <!-- NAVIGATION -->
+                <div class="ys-footer-col">
+                    <h4>Explore</h4>
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About Us</a>
+                    <a href="partnership.html">Business Models</a>
+                    <a href="deliveryprocess.html">Delivery Process</a>
+                    <a href="index.html#yscontact">Careers</a>
+                </div>
+
+
+                <!-- CUSTOMER -->
+                <div class="ys-footer-col">
+                    <h4>Customer</h4>
+                    <a href="#">Contact Support</a>
+                    <a href="#">Order Tracking</a>
+                    <a href="#">Shipping Policy</a>
+                    <a href="#">Returns & Refunds</a>
+                    <a href="#">Help Center</a>
+                </div>
+
+
+                <!-- APP DOWNLOAD -->
+                <div class="ys-footer-col ys-app-section">
+
+                    <h4>Get the App</h4>
+
+                    <p>Download Yuro Shoppy for faster shopping.</p>
+
+                    <div class="ys-app-buttons">
+
+                        <a href="#" class="ys-playstore">
+                            <i class="fab fa-google-play"></i>
+                            <span>Google Play</span>
+                        </a>
+
+                        <a href="#" class="ys-appstore">
+                            <i class="fab fa-apple"></i>
+                            <span>App Store</span>
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- QUOTE -->
+
+            <div class="ys-footer-quote">
+                “Shopping should be fast, simple, and accessible for everyone.”
+            </div>
+
+
+            <!-- BOTTOM -->
+
+            <div class="ys-footer-bottom">
+
+                <span>© 2026 Yuro Shoppy. All rights reserved.</span>
+
+                <div class="ys-footer-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Refund Policy</a>
+                </div>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+    <script>
+        (function () {
+            const models = [
+                {
+                    name: 'Inventory',
+                    icon: 'fa-boxes',
+                    tagline: 'We manage storage, packaging & delivery',
+                    benefits: ['Higher product ranking', 'Faster delivery tagging', 'Centralized stock management', 'Bulk movement efficiency', 'Better customer trust'],
+                    requirements: ['Consistent product supply', 'GST billing support', 'Standard packaging compliance', 'Quality assurance approval'],
+                    who: 'Brands, wholesalers, manufacturers, high-volume sellers',
+                    how: 'Onboard → Send stock → Quality verification → Live on app → Orders delivered',
+                    eligId: 'elig-inventory'
+                },
+                {
+                    name: 'Marketplace',
+                    icon: 'fa-store',
+                    tagline: 'Sell directly from your store, we handle platform & delivery',
+                    benefits: ['No warehouse transfer', 'Full stock control', 'Lower operational cost', 'Quick onboarding'],
+                    requirements: ['Active store location', 'Min serviceable radius', 'Basic packaging capability', 'On-time order readiness'],
+                    who: 'Local retailers, kirana stores, specialty shops, home businesses',
+                    how: 'Store onboarding → Products listed → Orders received → Packed at store → Pickup',
+                    eligId: 'elig-marketplace'
+                },
+                {
+                    name: 'Hybrid',
+                    icon: 'fa-code-merge',
+                    tagline: 'Fast movers in hubs, slow movers at store – best flexibility',
+                    benefits: ['Optimized logistics', 'Higher product availability', 'Faster delivery for top items', 'Reduced storage pressure', 'Better sales performance'],
+                    requirements: ['Meet inventory criteria for hub SKUs', 'Meet marketplace criteria for store SKUs', 'GST / business registration', 'Catalogue segmentation'],
+                    who: 'Growing retailers, regional brands, multi-category sellers',
+                    how: 'Top SKUs → Yuro hub · Other SKUs → your store · single dashboard',
+                    eligId: 'elig-hybrid'
+                }
+            ];
+
+            let currentCenter = 0; // 0 inventory, 1 marketplace, 2 hybrid
+            const container = document.getElementById('carouselContainer');
+            const prevBtn = document.getElementById('prevArrow');
+            const nextBtn = document.getElementById('nextArrow');
+
+            function renderCarousel(centerIdx) {
+                const leftIdx = (centerIdx - 1 + 3) % 3;
+                const rightIdx = (centerIdx + 1) % 3;
+                const positions = [leftIdx, centerIdx, rightIdx]; // order left, center, right
+
+                let html = '';
+                positions.forEach((modelIdx, pos) => {
+                    const m = models[modelIdx];
+                    const isCenter = (modelIdx === centerIdx);
+                    // build full details (always used on mobile, on desktop only center shows full)
+                    const benefitsLI = m.benefits.map(b => `<li><i class="fas fa-check-circle"></i> ${b}</li>`).join('');
+                    const reqLI = m.requirements.map(r => `<li><i class="fas fa-angle-right"></i> ${r}</li>`).join('');
+                    const fullContent = `
+            <div class="full-content">
+              <div class="card-header"><i class="fas ${m.icon}"></i><h3>${m.name}</h3></div>
+              <div class="card-tagline" style="margin-bottom:1rem; color:#365b7c;">${m.tagline}</div>
+              <div class="benefits-req-grid">
+                <div><div class="subtitle-sm" style="font-weight:600; margin-bottom:0.5rem;">✔️ Benefits</div><ul class="benefits-list">${benefitsLI}</ul></div>
+                <div><div class="subtitle-sm" style="font-weight:600; margin-bottom:0.5rem;">📋 Requirements</div><ul class="req-list">${reqLI}</ul></div>
+              </div>
+              <div class="who-how"><p><i class="fas fa-users"></i> <strong>Who:</strong> ${m.who}</p><p><i class="fas fa-gear"></i> <strong>How:</strong> ${m.how}</p></div>
+              <div class="model-btn-group">
+              <button class="eligibility-btn" data-elig="${m.eligId}"><i class="fas fa-arrow-right"></i> View ${m.name} eligibility</button>
+              <button class="ys-apply-btn" data-model="${m.name}">
+                <i class="fas fa-paper-plane"></i> Apply Now</button> 
+                </div>
+            </div>
+          `;
+                    const sideContent = `
+            <div class="side-content">
+              <i class="fas ${m.icon}" style="font-size:3rem; color:#1b7f7a; margin-bottom:0.5rem;"></i>
+              <h3 style="font-size:1.6rem;">${m.name}</h3>
+              <p>${m.tagline.substring(0, 35)}…</p>
+              <div class="small-cta"><i class="fas fa-pointer"></i> click to explore</div>
+            </div>
+          `;
+                    // on desktop we conditionally show; on mobile both are present but we control via css
+                    // but for simplicity we'll always include full, and hide side with css if needed.
+                    // we also need to keep side content for desktop non-center.
+                    // So we include both, and use CSS to toggle display based on .center and media.
+                    html += `<div class="carousel-card ${isCenter ? 'center' : ''}" data-model="${modelIdx}">${fullContent}${sideContent}</div>`;
+                });
+                container.innerHTML = html;
+
+                // attach click on side cards (desktop only, but doesn't harm mobile)
+                document.querySelectorAll('.carousel-card:not(.center)').forEach(card => {
+                    card.addEventListener('click', (e) => {
+                        // ignore if clicked on button inside card (but button is only in fullcontent, which on non-center is hidden on desktop,
+                        // but on mobile all cards have button, we need to prevent card click when button clicked.
+                        if (e.target.closest('.eligibility-btn')) return;
+                        const modelIdx = parseInt(card.dataset.model, 10);
+                        if (!isNaN(modelIdx) && modelIdx !== currentCenter) {
+                            currentCenter = modelIdx;
+                            renderCarousel(currentCenter);
+                        }
+                    });
+                });
+
+                // eligibility buttons
+                document.querySelectorAll('.eligibility-btn').forEach(btn => {
+                    btn.addEventListener('click', function (e) {
+                        e.stopPropagation(); // avoid triggering card click
+                        e.preventDefault();
+                        const targetId = this.getAttribute('data-elig');
+                        const targetEl = document.getElementById(targetId);
+                        if (targetEl) {
+                            document.querySelectorAll('.model-elig-card').forEach(c => c.classList.remove('highlight'));
+                            targetEl.classList.add('highlight');
+                            targetEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                            setTimeout(() => targetEl.classList.remove('highlight'), 2800);
+                        }
+                    });
+                });
+
+                // on mobile we want to update currentCenter based on scroll snap? we can optionally sync
+                // but for simplicity we keep separate.
+            }
+
+            renderCarousel(currentCenter);
+
+            prevBtn.addEventListener('click', () => {
+                currentCenter = (currentCenter - 1 + 3) % 3;
+                renderCarousel(currentCenter);
+            });
+            nextBtn.addEventListener('click', () => {
+                currentCenter = (currentCenter + 1) % 3;
+                renderCarousel(currentCenter);
+            });
+
+            // hash highlight
+            window.addEventListener('load', () => {
+                const hash = window.location.hash.substring(1);
+                if (hash) {
+                    const el = document.getElementById(hash);
+                    if (el) {
+                        el.classList.add('highlight');
+                        setTimeout(() => el.classList.remove('highlight'), 3000);
+                    }
+                }
+            });
+
+            // optional: on mobile, snap scroll can change center, but we don't auto-update model, 
+            // user can tap side cards (which are full cards) to switch? Actually on mobile all cards are full,
+            // so user can just tap any card and it will become center via click. That works.
+        })();
+    </script>
+
+    <script>
+        /* OPEN FORM BASED ON MODEL */
+
+        document.addEventListener("click", function (e) {
+
+            const btn = e.target.closest(".ys-apply-btn");
+            if (!btn) return;
+
+            const model = btn.dataset.model;
+
+            if (model === "Inventory") {
+                document.getElementById("ysInventoryModal").style.display = "flex";
+            }
+
+            if (model === "Marketplace") {
+                document.getElementById("ysMarketplaceModal").style.display = "flex";
+            }
+
+            if (model === "Hybrid") {
+                document.getElementById("ysHybridModal").style.display = "flex";
+            }
+
+        });
+    </script>
+
+    <script>
+        /* ===== OPEN FORM BASED ON MODEL ===== */
+
+        document.addEventListener("click", function (e) {
+
+            if (e.target.closest('[data-elig="elig-inventory"]')) {
+                document.getElementById("ysInventoryModal").style.display = "flex";
+            }
+
+            if (e.target.closest('[data-elig="elig-marketplace"]')) {
+                document.getElementById("ysMarketplaceModal").style.display = "flex";
+            }
+
+            if (e.target.closest('[data-elig="elig-hybrid"]')) {
+                document.getElementById("ysHybridModal").style.display = "flex";
+            }
+
+        });
+
+        /* ===== CLOSE BUTTON ===== */
+
+        document.querySelectorAll(".ys-close-btn").forEach(btn => {
+            btn.onclick = function () {
+                document.getElementById(this.dataset.close).style.display = "none";
+            }
+        });
+
+        /* ===== WHATSAPP SUBMIT FUNCTION ===== */
+
+        function sendToWhatsApp(form, model) {
+
+            const data = new FormData(form);
+
+            let msg = `*New ${model} Partner Application*%0A%0A`;
+
+            data.forEach((value, key) => {
+                msg += `*${key}*: ${value}%0A`;
+            });
+
+            const phone = "9786206210";
+
+            window.open(`https://wa.me/91${phone}?text=${msg}`, "_blank");
+
+            alert("Application Successfully Submitted!");
+
+            form.reset();
+        }
+
+        /* ===== FORM EVENTS ===== */
+
+        document.getElementById("ysInventoryForm").onsubmit = function (e) {
+            e.preventDefault();
+            sendToWhatsApp(this, "Inventory");
+        }
+
+        document.getElementById("ysMarketplaceForm").onsubmit = function (e) {
+            e.preventDefault();
+            sendToWhatsApp(this, "Marketplace");
+        }
+
+        document.getElementById("ysHybridForm").onsubmit = function (e) {
+            e.preventDefault();
+            sendToWhatsApp(this, "Hybrid");
+        }
+    </script>
+
+    <script>
+        const toggle = document.querySelector(".ys-menu-toggle");
+        const mobileNav = document.querySelector(".ys-mobile-nav");
+
+        toggle.addEventListener("click", () => {
+            mobileNav.classList.toggle("active");
+        });
+    </script>
+</body>
+
+</html>

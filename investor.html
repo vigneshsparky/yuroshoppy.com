@@ -1,0 +1,1720 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yuro Shoppy | Investor models</title>
+    <link rel="shortcut icon" href="gallery/ys_color_fav.png" type="image/x-icon">
+    <!-- Font Awesome 6 (free) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <style>
+        /* ===== RESET & PROFESSIONAL BASE ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #F7F9FC;
+            /* soft background from logo neutral */
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.5;
+            color: #13294B;
+            /* primary deep navy from logo (YS dark) */
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: linear-gradient(rgba(244, 248, 255, 0.85), rgba(198, 217, 255, 0.85)),
+                url('https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=1400&q=80');
+            background-size: cover;
+            background-attachment: fixed;
+        }
+
+        .container {
+            max-width: 1300px;
+            width: 100%;
+            padding: 2rem 1.5rem;
+        }
+
+        /* ===== TYPOGRAPHY – clean, professional ===== */
+        h1,
+        h2,
+        h3 {
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+
+        .overline {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #2E5A9C;
+            /* medium blue from logo (YS number) */
+            font-weight: 600;
+        }
+
+        /* ===== LOGO BAR (skip header/footer but keep brand presence) ===== */
+        .brand-bar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 2.5rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .logo-group {
+            display: flex;
+            align-items: center;
+            gap: 1.2rem;
+        }
+
+        .logo-main {
+            background: #13294B;
+            /* deep navy */
+            color: white;
+            font-weight: 800;
+            font-size: 2rem;
+            padding: 0.3rem 1.5rem 0.3rem 1.5rem;
+            border-radius: 60px;
+            letter-spacing: -0.5px;
+            box-shadow: 0 6px 14px rgba(18, 40, 75, 0.12);
+        }
+
+        .logo-number-badge {
+            background: #E8A51E;
+            /* mustard/gold from logo (5.0 number) */
+            color: #13294B;
+            font-weight: 800;
+            font-size: 1.8rem;
+            padding: 0.2rem 1.2rem;
+            border-radius: 100px;
+            box-shadow: 0 4px 10px rgba(232, 165, 30, 0.3);
+        }
+
+        .github-ref {
+            background: #EFF3F8;
+            padding: 0.5rem 1.5rem;
+            border-radius: 40px;
+            color: #1F3A6B;
+            font-family: 'SF Mono', 'Fira Code', monospace;
+            font-size: 0.9rem;
+            border: 1px solid #ced9e9;
+        }
+
+        /* HEADER */
+        .ys-header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            width: 100%;
+            backdrop-filter: blur(14px);
+            background: rgba(255, 255, 255, 0.75);
+            padding: 0px 100px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        /* inner */
+        .ys-header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px;
+        }
+
+        /* brand */
+        /* BRAND AREA */
+        .ys-brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* logo */
+        .ys-brand img {
+            /* width: 38px; */
+            width: 45px;
+            filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.15));
+            border-radius: 50%;
+
+            /* transition:0.3s; */
+        }
+
+        /* brand text */
+        .ys-brand-text {
+            font-size: 1.5rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            position: relative;
+            background: linear-gradient(90deg, #2563eb, #4f46e5, #2563eb);
+            background-size: 200% auto;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            /* animation:ysBrandGradient 4s linear infinite; */
+        }
+
+        /* highlight second word */
+        .ys-brand-text span {
+            font-weight: 900;
+        }
+
+
+
+        /* subtle glow */
+        .ys-brand-text::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            filter: blur(12px);
+            opacity: 0.2;
+        }
+
+        /* nav */
+        .ys-nav {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+
+        /* links */
+        .ys-nav a {
+            position: relative;
+            text-decoration: none;
+            color: #374151;
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+
+        /* hover underline animation */
+        .ys-nav a::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -6px;
+            width: 0%;
+            height: 2px;
+            background: #2563eb;
+            transition: 0.3s;
+        }
+
+        .ys-nav a:hover {
+            color: #2563eb;
+        }
+
+        .ys-nav a:hover::after {
+            width: 100%;
+        }
+
+        /* CTA BUTTON */
+        .ys-btn-download {
+            background: #2563eb;
+            color: white !important;
+            padding: 10px 22px;
+            border-radius: 40px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 600;
+        }
+
+        /* arrow animation */
+        .ys-btn-download i {
+            animation: ysArrow 1.4s infinite;
+        }
+
+        @keyframes ysArrow {
+
+            0% {
+                transform: translateY(0)
+            }
+
+            50% {
+                transform: translateY(4px)
+            }
+
+            100% {
+                transform: translateY(0)
+            }
+
+        }
+
+        /* hover */
+        .ys-btn-download:hover {
+            background: #1e40af;
+        }
+
+        /* mobile toggle */
+        .ys-menu-toggle {
+            display: none;
+            font-size: 1.6rem;
+            cursor: pointer;
+        }
+
+        /* mobile nav */
+        .ys-mobile-nav {
+            max-height: 0;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            background: white;
+            transition: 0.35s;
+        }
+
+        .ys-mobile-nav a {
+            padding: 14px 20px;
+            border-top: 1px solid #eee;
+            text-decoration: none;
+            color: #333;
+        }
+
+        /* mobile CTA */
+        .ys-btn-mobile {
+            background: #2563eb;
+            color: white !important;
+            text-align: center;
+            margin: 16px;
+            border-radius: 30px;
+        }
+
+        /* active */
+        .ys-mobile-nav.active {
+            max-height: 400px;
+        }
+
+        /* responsive */
+        @media(max-width:900px) {
+
+            .ys-nav {
+                display: none;
+            }
+
+            .ys-menu-toggle {
+                display: block;
+            }
+
+        }
+
+
+
+
+        /* ===== HERO SECTION (investor headline) ===== */
+        .hero {
+            margin: 2rem 0 1.5rem 0;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            line-height: 1.1;
+            color: #0A1E3C;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1.2rem;
+        }
+
+        .hero-tag {
+            background: #E8A51E;
+            font-size: 2rem;
+            font-weight: 700;
+            padding: 0.4rem 2rem;
+            border-radius: 100px;
+            color: #0A1E3C;
+        }
+
+        .hero-sub {
+            font-size: 1.4rem;
+            color: #2b4970;
+            max-width: 750px;
+            margin: 1.5rem 0 1.8rem 0;
+            font-weight: 400;
+        }
+
+        /* ===== METRICS PANEL (from second image) ===== */
+        .metrics-panel {
+            background: white;
+            border-radius: 48px;
+            padding: 1.8rem 2.5rem;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-evenly;
+            box-shadow: 0 25px 40px -20px rgba(0, 20, 50, 0.15);
+            border: 1px solid rgba(46, 90, 156, 0.1);
+            margin: 2.2rem 0 2.8rem;
+        }
+
+        .metric-item {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            font-size: 1.2rem;
+            color: #1F3A5F;
+        }
+
+        .metric-icon {
+            font-size: 2.4rem;
+            line-height: 1;
+        }
+
+        .metric-item strong {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: #13294B;
+            margin-right: 0.2rem;
+        }
+
+        .explore-pill {
+            background: #13294B;
+            color: white;
+            border-radius: 60px;
+            padding: 0.9rem 2.2rem;
+            font-weight: 600;
+            font-size: 1.1rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            box-shadow: 0 8px 14px -8px #13294B70;
+            transition: all 0.15s;
+        }
+
+        .explore-pill i {
+            font-size: 1.2rem;
+        }
+
+        /* ===== BENEFITS BLOCK (first image) with logo gold ===== */
+        .benefits-block {
+            background: #13294B;
+            /* deep navy */
+            border-radius: 48px;
+            padding: 2.5rem 2.8rem;
+            margin: 3rem 0 3rem;
+            color: white;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 2rem;
+            background-image: radial-gradient(circle at 100% 0%, #2E5A9C20 1px, transparent 1px);
+        }
+
+        .benefits-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem 3rem;
+        }
+
+        .benefits-grid span {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            font-size: 1.2rem;
+            font-weight: 500;
+        }
+
+        .benefits-grid i {
+            color: #E8A51E;
+            /* logo gold */
+            font-size: 1.5rem;
+            filter: drop-shadow(0 2px 4px #e8a41e60);
+        }
+
+        .contact-phone {
+            background: #2E5A9C;
+            /* medium blue */
+            border-radius: 60px;
+            padding: 1.2rem 2.2rem;
+            min-width: 240px;
+        }
+
+        .contact-phone .small-label {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            letter-spacing: 1px;
+        }
+
+        .contact-phone .number {
+            font-size: 1.8rem;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            line-height: 1.2;
+            word-break: keep-all;
+        }
+
+        .contact-phone i {
+            margin-right: 8px;
+            color: #E8A51E;
+        }
+
+        /* ===== CARD GRID (professional spacing, clean box model) ===== */
+        .cards-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin: 3rem 0 2rem;
+        }
+
+        .card {
+            flex: 1 1 350px;
+            background: white;
+            border-radius: 44px;
+            padding: 2.4rem 2.2rem;
+            box-shadow: 0 20px 35px -10px rgba(18, 40, 75, 0.08);
+            border: 1px solid #eef2f8;
+            transition: transform 0.2s ease, box-shadow 0.2s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 30px 45px -12px #13294B30;
+            border-color: #d6e2f5;
+        }
+
+        .card-label {
+            color: #2E5A9C;
+            font-weight: 700;
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+            margin-bottom: 0.5rem;
+        }
+
+        .card-title {
+            font-size: 2.2rem;
+            font-weight: 800;
+            line-height: 1.2;
+            color: #0A1E3C;
+        }
+
+        .investment-badge {
+            background: #F3E7D3;
+            /* warm tint from gold */
+            color: #0A1E3C;
+            padding: 0.7rem 2rem;
+            border-radius: 60px;
+            font-weight: 800;
+            font-size: 2rem;
+            display: inline-block;
+            margin: 1.2rem 0 1.2rem;
+            align-self: flex-start;
+            border: 1px solid #E8A51E50;
+        }
+
+        .coverage-box {
+            background: #F5F8FF;
+            border-radius: 28px;
+            padding: 1rem 1.2rem;
+            margin: 0.8rem 0 1.3rem;
+            border-left: 4px solid #E8A51E;
+            border-right: 4px solid #E8A51E;
+        }
+
+        .coverage-box p {
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: #13294B;
+        }
+
+        .coverage-box ul {
+            list-style: none;
+        }
+
+        .coverage-box li {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            margin-bottom: 0.4rem;
+        }
+
+        .coverage-box i {
+            color: #2E5A9C;
+            width: 1.5rem;
+        }
+
+        .feature-list {
+            margin: 1.2rem 0 1rem;
+        }
+
+        .feature-list .feature {
+            display: flex;
+            align-items: center;
+            gap: 0.7rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .feature i {
+            background: #E8A51E20;
+            color: #13294B;
+            border-radius: 50%;
+            width: 2rem;
+            height: 2rem;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+        }
+
+        .bestfor-tag {
+            background: #EFF3FA;
+            border-radius: 24px;
+            padding: 1rem 1.2rem;
+            margin: 1.6rem 0 1.8rem;
+            border-left: 4px solid #2E5A9C;
+            border-right: 4px solid #2E5A9C;
+            font-weight: 500;
+            color: #13294B;
+        }
+
+        .btn-apply {
+            background: #13294B;
+            color: white;
+            border: none;
+            border-radius: 60px;
+            padding: 1.1rem 1.5rem;
+            font-size: 1.3rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.8rem;
+            cursor: pointer;
+            transition: background 0.2s, transform 0.1s;
+            margin-top: auto;
+            width: 100%;
+        }
+
+        .btn-apply:hover {
+            background: #1F3F6B;
+        }
+
+        .btn-apply i {
+            font-size: 1.5rem;
+        }
+
+        /* ===== PARTNER PERKS ===== */
+        .perks-bar {
+            background: white;
+            border-radius: 48px;
+            padding: 2rem 2.5rem;
+            margin: 2.5rem 0 2rem;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            border: 1px solid #E8A51E40;
+        }
+
+        .perk-items {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem 2.5rem;
+        }
+
+        .perk-items span {
+            font-weight: 600;
+            color: #13294B;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .perk-items i {
+            color: #E8A51E;
+        }
+
+        /* ===== NOTE / BOOKING ===== */
+        .note-booking {
+            background: #fef7ec;
+            border-radius: 40px;
+            padding: 2rem 2.5rem;
+            margin: 2rem 0 3rem;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            border-left: 12px solid #E8A51E;
+        }
+
+        .note-text strong {
+            font-size: 1.3rem;
+            color: #13294B;
+        }
+
+        .booking-cta {
+            background: #13294B;
+            color: white;
+            padding: 1rem 2.5rem;
+            border-radius: 60px;
+            font-weight: 700;
+            font-size: 1.2rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.8rem;
+            box-shadow: 0 8px 18px #13294B40;
+        }
+
+        /* ===== MODAL (POPUP) – refined ===== */
+        .modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(10, 20, 40, 0.7);
+            backdrop-filter: blur(8px);
+            align-items: center;
+            justify-content: center;
+            z-index: 2000;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal-card {
+            background: white;
+            max-width: 480px;
+            width: 90%;
+            border-radius: 56px;
+            padding: 2.4rem 2.4rem 2.8rem;
+            box-shadow: 0 40px 70px #0A1E3C60;
+            position: relative;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 1.6rem;
+            right: 2rem;
+            font-size: 2.5rem;
+            cursor: pointer;
+            color: #6b7f9c;
+            transition: color 0.1s;
+        }
+
+        .modal-close:hover {
+            color: #13294B;
+        }
+
+        .modal-title {
+            font-size: 2.4rem;
+            font-weight: 800;
+            color: #0A1E3C;
+            margin-bottom: 0.25rem;
+        }
+
+        .modal-model {
+            background: #E8A51E20;
+            color: #13294B;
+            padding: 0.4rem 1.8rem;
+            border-radius: 60px;
+            display: inline-block;
+            font-weight: 700;
+            margin: 0.5rem 0 1.8rem;
+            border: 1px solid #E8A51E70;
+        }
+
+        .input-field {
+            margin-bottom: 1.4rem;
+        }
+
+        .input-field label {
+            font-weight: 600;
+            color: #1F3A5F;
+            display: block;
+            margin-bottom: 0.4rem;
+        }
+
+        .input-field input,
+        .input-field textarea {
+            width: 100%;
+            padding: 1rem 1.4rem;
+            border-radius: 40px;
+            border: 1.5px solid #cdd9ec;
+            font-size: 1rem;
+            transition: 0.2s;
+        }
+
+        .input-field input:focus,
+        .input-field textarea:focus {
+            border-color: #2E5A9C;
+            outline: none;
+            box-shadow: 0 0 0 3px #2E5A9C20;
+        }
+
+        .btn-send-wa {
+            background: #25D366;
+            color: white;
+            border: none;
+            width: 100%;
+            padding: 1.1rem;
+            border-radius: 60px;
+            font-weight: 700;
+            font-size: 1.3rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.8rem;
+            cursor: pointer;
+            transition: 0.2s;
+            margin-top: 1.2rem;
+        }
+
+        .btn-send-wa:hover {
+            background: #20b859;
+        }
+
+        /* no footer */
+        .watermark-note {
+            text-align: center;
+            font-size: 0.8rem;
+            color: #a4b7cf;
+            margin-top: 3rem;
+            border: none;
+        }
+
+        .metrics-inside {
+            display: flex;
+            /* flex-direction: column; */
+            gap: 10px;
+            /* align-items: center; */
+            justify-content: center;
+        }
+
+        .metrics-inside1- {
+            display: flex;
+            width: 100%;
+            justify-content: center;
+            align-items: center;
+        }
+
+        button {
+            border: none;
+            margin-top: 10px;
+        }
+
+        .btn-brochure {
+            background: white;
+            color: #13294B;
+            border: 2px solid #E8A51E;
+            border-radius: 60px;
+            padding: 0.9rem;
+            font-weight: 600;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.8rem;
+            cursor: pointer;
+            transition: background 0.15s;
+            width: 100%;
+            text-decoration: none;
+        }
+
+        .btn-brochure:hover {
+            background: #E8A51E10;
+        }
+
+        .btn-brochure i {
+            color: #E8A51E;
+            font-size: 1.2rem;
+        }
+
+        /* ================= STATS ================= */
+
+        .stats {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            padding: 30px;
+            margin-bottom: 60px;
+        }
+
+        .stat {
+            flex: 1 1 200px;
+            text-align: center;
+            margin: 15px;
+        }
+
+        .stat h2 {
+            font-size: 30px;
+            color: #0d6efd;
+        }
+
+        .stat p {
+            font-size: 14px;
+            color: #5c6b80;
+        }
+
+        .glass {
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.75);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            border-radius: 22px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.05);
+        }
+
+
+        @media (max-width: 768px) {
+            /* body {
+                padding: 1rem;
+            } */
+
+            .hero h1 {
+                font-size: 2.3rem;
+            }
+
+            .metrics-panel {
+                padding: 1rem;
+            }
+
+            .metrics-inside {
+                margin: 20px 0px;
+                flex-direction: column;
+            }
+
+            .metrics-inside .metric-item {
+                font-size: 1rem;
+            }
+
+            .metric-item strong {
+                font-size: 1.2rem;
+                font-weight: 600;
+            }
+
+            .container {
+                padding: 1rem 0.6rem;
+            }
+
+            .stat h2 {
+                font-size: 22px;
+            }
+
+            .card {
+                padding: 1.2rem;
+            }
+
+            .card-title {
+                font-size: 1.6rem;
+                font-weight: 700;
+            }
+
+            .benefits-block {
+                padding: 1.5rem;
+            }
+
+            .btn-apply {
+                padding: 0.7rem 0.7rem;
+                font-size: 1rem;
+                font-weight: 500;
+            }
+
+            .booking-cta {
+                padding: 0.7rem 1.5rem;
+                border-radius: 60px;
+                font-weight: 600;
+                font-size: 1rem;
+                margin-top: 10px;
+            }
+
+            .modal-card {
+                padding: 1.2rem 1.2rem 1.5rem;
+                border-radius: 20px;
+            }
+
+            .modal-close {
+                top: 1.3rem;
+                right: 1.7rem;
+                font-size: 2rem;
+                color: #000000;
+
+            }
+
+            .modal-title {
+                font-size: 1.4rem;
+                font-weight: 600;
+            }
+        }
+
+        .ys-footer {
+            background: linear-gradient(180deg, #0f172a, #020617);
+            color: #d1d5db;
+            /* padding: 70px 30px 25px; */
+            padding: 50px 100px 0px;
+        }
+
+        /* GRID */
+
+        .ys-footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1.5fr;
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        /* BRAND */
+
+        .ys-footer-logo {
+            width: 50px;
+            margin-bottom: 10px;
+            border-radius: 10%;
+        }
+
+        .ys-brand-name {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 8px;
+        }
+
+        .ys-footer-desc {
+            font-size: .9rem;
+            color: #9ca3af;
+            margin-bottom: 20px;
+        }
+
+        /* SOCIAL */
+
+        .ys-footer-social a {
+            margin-right: 12px;
+            font-size: 18px;
+            color: #9ca3af;
+            transition: .3s;
+        }
+
+        .ys-footer-social a:hover {
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        /* LINKS */
+
+        .ys-footer-col h4 {
+            color: white;
+            margin-bottom: 15px;
+        }
+
+        .ys-footer-col a {
+            display: block;
+            margin-bottom: 8px;
+            text-decoration: none;
+            color: #9ca3af;
+            font-size: .9rem;
+            transition: .3s;
+        }
+
+        /* .ys-footer-col a:hover {
+    color: white;
+    padding-left: 4px;
+} */
+
+        /* APP BUTTONS */
+
+        .ys-app-buttons {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+            color: white !important;
+        }
+
+        .ys-playstore,
+        .ys-appstore {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 16px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: .9rem;
+            font-weight: 600;
+
+        }
+
+        .ys-playstore {
+            background: #16a34a;
+            color: white !important;
+        }
+
+        .ys-appstore {
+            background: white;
+            color: black !important;
+        }
+
+        .ys-playstore:hover {
+            background: #16a34a;
+            transform: none !important;
+        }
+
+        .ys-appstore:hover {
+            background: #e5e7eb;
+        }
+
+        /* QUOTE */
+
+        .ys-footer-quote {
+            text-align: center;
+            font-style: italic;
+            color: #9ca3af;
+            margin-bottom: 30px;
+            font-size: .95rem;
+        }
+
+        /* BOTTOM */
+
+        .ys-footer-bottom {
+            border-top: 1px solid #1f2937;
+            padding-top: 20px;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            font-size: .85rem;
+        }
+
+        .ys-footer-links a {
+            margin-left: 15px;
+            color: #9ca3af;
+            text-decoration: none;
+        }
+
+        .ys-footer-links a:hover {
+            color: white;
+        }
+
+        @media(max-width:900px) {
+
+            .ys-footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+        }
+
+        @media(max-width:600px) {
+
+            .ys-footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .ys-footer-bottom {
+                flex-direction: column;
+                gap: 10px;
+                text-align: center;
+            }
+
+            .ys-footer-links a {
+                margin: 0 8px;
+            }
+            .ys-future-card{
+                padding: 5px;
+            }
+
+        }
+
+        /* ===== Investor Future Section ===== */
+
+        #ysInvestorFutureSection {
+            padding: 50px 0px;
+            background: linear-gradient(to right, #fff8f0, #ffffff);
+            text-align: center;
+        }
+
+        .ys-future-heading-box {
+            margin-bottom: 60px;
+        }
+
+        .ys-future-main-title {
+            font-size: 36px;
+            font-weight: 700;
+            color: #222;
+        }
+
+        .ys-future-sub-title {
+            font-size: 24px;
+            color: #e65100;
+            margin-top: 10px;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        .ys-future-description {
+            max-width: 700px;
+            margin: 15px auto 0;
+            color: #555;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        .ys-future-card-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .ys-future-card {
+            background: #ffffff;
+            width: 320px;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: 0.4s ease;
+            opacity: 0;
+            transform: translateY(40px);
+        }
+
+        .ys-future-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+        }
+
+        .ys-future-img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 12px;
+            margin-bottom: 15px;
+        }
+
+        .ys-future-card h4 {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .ys-future-card p {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* Animation Active Class */
+        .ys-future-card.ys-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="ys-header">
+
+        <div class="ys-container ys-header-inner">
+
+            <!-- Logo -->
+            <div class="ys-brand">
+                <img src="gallery/ys_color_fav.png" alt="YuroShoppy Logo">
+
+                <h1 class="ys-brand-text">
+                    Yuro<span>Shoppy</span>
+                </h1>
+            </div>
+
+            <!-- Desktop Menu -->
+            <nav class="ys-nav">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="partnership.html">Business Models</a>
+                <a href="deliveryprocess.html">Delivery</a>
+                <a href="#yscontact">Contact</a>
+                <a href="vendor.html">Vendor</a>
+
+                <a href="#" class="ys-btn-download">
+                    Download App
+                    <i class="fas fa-arrow-down"></i>
+                </a>
+            </nav>
+
+            <!-- Mobile Menu Button -->
+            <div class="ys-menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="ys-mobile-nav">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="partnership.html">Business Models</a>
+            <a href="deliveryprocess.html">Delivery</a>
+            <a href="index.html#yscontact">Contact</a>
+            <a href="vendor.html">Vendor</a>
+
+            <a href="#" class="ys-btn-mobile">
+                Download App
+                <i class="fas fa-arrow-down"></i>
+            </a>
+        </div>
+
+    </header>
+    <main class="container">
+
+
+
+        <div>
+            <!-- hero title + investors -->
+            <div class="hero">
+                <h1> Yuro Shoppy
+                    <span class="hero-tag">Investors</span>
+                </h1>
+                <div class="hero-sub">Invest in our diverse business verticals with minimum investment options and high
+                    growth potential.</div>
+            </div>
+
+            <div class="stats glass">
+                <div class="stat">
+                    <!-- <h2 class="counter" data-target="500">0 </h2> -->
+                    <h2><span class="counter" data-target="500">0</span>+</h2>
+                    <p>Team Members</p>
+                </div>
+                <div class="stat">
+                    <!-- <h2 class="counter" data-target="100">0 </h2> -->
+                    <h2><span class="counter" data-target="150">0</span>+</h2>
+                    <p>Franchise Outlets</p>
+                </div>
+                <div class="stat">
+                    <h2>₹<span class="counter" data-target="10">0</span>Cr+</h2>
+                    <p>Investor Trust</p>
+                </div>
+            </div>
+
+            <!-- ===== Future Expansion Section - Investor Page ===== -->
+            <section id="ysInvestorFutureSection" class="ys-investor-future-wrapper">
+
+                <div class="ys-future-heading-box">
+                    <h2 class="ys-future-main-title">
+                        Our Future Expansion Plans
+                    </h2>
+                    <!-- <h3 class="ys-future-sub-title">
+                        Millionar Ideas
+                    </h3> -->
+                    <p class="ys-future-description">
+                        Yuro Shopping is strategically expanding into high-growth digital and essential service sectors
+                        to build a diversified and scalable ecosystem.
+                    </p>
+                </div>
+
+                <div class="ys-future-card-container">
+
+                    <!-- Yuro Food App -->
+                    <div class="ys-future-card" id="ysFutureFoodApp">
+                        <img src="gallery/yuro_food.png" alt="Yuro Food App" class="ys-future-img">
+                        <h4>Yuro Food App</h4>
+                        <p>
+                            Fresh food. Quick delivery. Affordable price.  We support local and regional dishes. 
+                            Yuro Food App is a local food delivery service.
+It connects nearby restaurants with customers.
+<br>
+Fresh food. Quick delivery. Affordable price.
+                        </p>
+                    </div>
+
+                    <!-- Yuro Taxi App -->
+                    <div class="ys-future-card" id="ysFutureTaxiApp">
+                        <img src="gallery/yuro_taxi.png" alt="Yuro Taxi App" class="ys-future-img">
+                        <h4>Yuro Taxi App</h4>
+                        <p>
+                            Yuro Taxi App is a smart ride booking service.
+
+Customers can book safe and affordable rides easily.
+Drivers get more job opportunities.
+We use smart technology to make travel simple and fast. <br> Safe ride. Fair price. Easy booking.
+                        </p>
+                    </div>
+
+                    <!-- Yuro Quality Water -->
+                    <div class="ys-future-card" id="ysFutureWaterProject">
+                        <img src="gallery/yuro_water.jpeg" alt="Yuro Quality Water" class="ys-future-img">
+                        <h4>Yuro Quality Water</h4>
+                        <p>
+                            Yuro Quality Water provides clean and safe drinking water.
+
+Our water is purified and mineral-balanced.
+We supply to homes, shops, offices, and institutions.
+We use safe and eco-friendly packaging.
+
+Pure water. Healthy life.
+                        </p>
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- metrics panel (exact from second image) -->
+            <div class="metrics-panel">
+                <div class="metrics-inside">
+                    <div class="metric-item"><span class="metric-icon">&nbsp;₹&nbsp; </span> <span><strong>Min.
+                                Investment:</strong>
+                            ₹20,000</span></div>
+                    <div class="metric-item"><span class="metric-icon">🏢</span> <span><strong>5+</strong> Business
+                            Verticals</span></div>
+                    <div class="metric-item"><span class="metric-icon">📊</span> <span><strong>MD & Team Leader</strong>
+                            Positions</span></div>
+                </div>
+
+                <!-- <div class="metrics-inside-1">
+                    <div class="explore-pill">Explore Investments →</div>
+                </div> -->
+            </div>
+
+            <!-- investor benefits (first image) with gold icons -->
+            <div class="benefits-block">
+                <div class="benefits-grid">
+                    <span><i class="fas fa-check-circle"></i> Equity Ownership</span>
+                    <span><i class="fas fa-chart-line"></i> Quarterly Profit Sharing</span>
+                    <span><i class="fas fa-scale-balanced"></i> Business Decision Rights</span>
+                    <span><i class="fas fa-user-tie"></i> Leadership Opportunities</span>
+                    <span><i class="fas fa-rocket"></i> First Priority on New Ventures</span>
+                </div>
+                <div class="contact-phone">
+                    <div class="small-label">Investment Queries</div>
+                    <div class="number"><i class="fas fa-phone"></i> 7010704215</div>
+                </div>
+            </div>
+
+            <!-- two cards (model 1 & model 2) -->
+            <div class="cards-row">
+                <!-- Model 1 -->
+                <div class="card" id="card-model1">
+                    <!-- <div class="card-label">Model 1</div> -->
+                    <div class="card-title">Starter District Partner</div>
+                    <div class="investment-badge">₹70,000</div>
+                    <p style="color:#2b4970;">Start your district operations with a low-investment entry model.</p>
+                    <div class="coverage-box">
+                        <p><i class="fas fa-map-pin"></i> Coverage</p>
+                        <ul>
+                            <li><i class="fas fa-check-circle"></i> Operational coverage for any 2 pincodes within the
+                                district.</li>
+                        </ul>
+                    </div>
+                    <div class="feature-list">
+                        <div class="feature"><i class="fas fa-warehouse"></i> No warehouse required</div>
+                        <div class="feature"><i class="fas fa-box-open"></i> No stock investment</div>
+                        <div class="feature"><i class="fas fa-truck"></i> Vendor direct delivery model</div>
+                        <div class="feature"><i class="fas fa-home"></i> Operate from home or small office</div>
+                        <div class="feature"><i class="fas fa-user-plus"></i> Focus on vendor onboarding & order
+                            generation
+                        </div>
+                    </div>
+                    <div class="bestfor-tag"><i class="fas fa-user-check" style="color:#E8A51E;"></i> <strong>Best
+                            For:</strong> Local entrepreneurs, First-time owners, District coordinators</div>
+                    <button class="btn-apply apply-btn" data-model="Starter District Partner (₹70,000)"><i
+                            class="fab fa-whatsapp"></i> Apply for District Partner →</button>
+                    <button>
+                        <a href="Business_Expansion_Proposal.pdf" target="_blank" download class="btn-brochure">Download
+                            Brochure (PDF)</a>
+                    </button>
+
+                </div>
+                <!-- Model 2 -->
+                <div class="card" id="card-model2">
+                    <!-- <div class="card-label">Model 2</div> -->
+                    <div class="card-title">District Franchise + Stock Point</div>
+                    <div class="investment-badge">₹3,00,000</div>
+                    <p style="color:#2b4970;">High-growth model with warehouse support and faster delivery.</p>
+                    <div class="coverage-box">
+                        <p><i class="fas fa-map-marked-alt"></i> Coverage</p>
+                        <ul>
+                            <li><i class="fas fa-check-circle"></i> Franchise rights for one district</li>
+                            <li><i class="fas fa-check-circle"></i> Operational coverage for up to 2 cities initially
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="feature-list">
+                        <div class="feature"><i class="fas fa-warehouse"></i> Small warehouse setup</div>
+                        <div class="feature"><i class="fas fa-boxes"></i> Inventory for fast-moving products</div>
+                        <div class="feature"><i class="fas fa-tachometer-alt"></i> Faster local delivery operations
+                        </div>
+                        <div class="feature"><i class="fas fa-truck"></i> Hybrid delivery model (Stock + Vendor)</div>
+                        <div class="feature"><i class="fas fa-bolt"></i> Better order fulfillment speed</div>
+                    </div>
+                    <div class="bestfor-tag"><i class="fas fa-briefcase" style="color:#E8A51E;"></i> <strong>Best
+                            For:</strong> Investors, Franchise operators, District-level logistics</div>
+                    <button class="btn-apply apply-btn" data-model="District Franchise + Stock Point (₹3,00,000)"><i
+                            class="fab fa-whatsapp"></i> Apply for Franchise →</button>
+                    <button>
+                        <a href="Business_Expansion_Proposal.pdf" target="_blank" download class="btn-brochure">Download
+                            Brochure (PDF)</a>
+                    </button>
+                </div>
+            </div>
+
+            <!-- partner benefits (gold accents) -->
+            <div class="perks-bar">
+                <div class="perk-items">
+                    <span><i class="fas fa-shield-alt"></i> Territory Protection</span>
+                    <span><i class="fas fa-mobile-alt"></i> Centralized App Control</span>
+                    <span><i class="fas fa-calendar-week"></i> Weekly Revenue Settlement</span>
+                    <span><i class="fas fa-headset"></i> Tech & Operational Support</span>
+                    <span><i class="fas fa-bullhorn"></i> Marketing Assistance</span>
+                </div>
+            </div>
+
+            <!-- Important note / fast booking -->
+            <div class="note-booking">
+                <div class="note-text">
+                    <strong><i class="fas fa-exclamation-circle" style="color:#E8A51E;"></i> Important Note — Fast
+                        Booking for District Partner & District Vendors</strong>
+                    <!-- <p style="margin-top:0.6rem; max-width:600px;">• Initial booking amount: ₹5,000 (fully
+                        adjustable)<br>•
+                        Reserve your district early before allocation closes.</p> -->
+                    <p style="margin-top:0.6rem; max-width:600px;">
+                        Pay just ₹5,000 to reserve your district today <br>
+                        This ₹5,000 will be included in the full payment. <br>
+                        Secure your district before it’s gone!
+                    </p>
+                    <p style="margin-top:0.6rem; max-width:600px;">
+                        உங்கள் மாவட்டத்தை முன்பதிவு செய்ய உடனே ₹5,000 மட்டும் செலுத்துங்கள் <br>
+                        இந்த ₹5,000 முழு கட்டணத்தில் சேர்க்கப்படும். <br>
+                        உங்கள் மாவட்டத்தை இப்போதே உறுதி செய்யுங்கள்!
+                    </p>
+                </div>
+                <div class="booking-cta"><i class="fas fa-lock"></i> Reserve now ₹5,000</div>
+            </div>
+
+            <!-- no footer, only tiny watermark -->
+            <!-- <div class="watermark-note">professional preview · PK Group investor interface</div> -->
+        </div>
+
+    </main>
+
+    <!-- MODAL popup -->
+    <div id="investmentModal" class="modal">
+        <div class="modal-card">
+            <span class="modal-close" id="closeModalBtn">&times;</span>
+            <div class="modal-title">Investor interest</div>
+            <div class="modal-model" id="modalModelDisplay">Starter District Partner</div>
+            <form id="waForm">
+                <div class="input-field">
+                    <label>Full name</label>
+                    <input type="text" id="fullName" placeholder="e.g. Arunraj" required>
+                </div>
+                <div class="input-field">
+                    <label>WhatsApp number</label>
+                    <input type="tel" id="mobileNum" placeholder="9087456320" required>
+                </div>
+                <div class="input-field">
+                    <label>Message (optional)</label>
+                    <textarea id="optionalMsg" rows="2" placeholder="I'm interested..."></textarea>
+                </div>
+                <button type="button" id="sendWABtn" class="btn-send-wa"><i class="fab fa-whatsapp"></i> Send to
+                    WhatsApp</button>
+            </form>
+        </div>
+    </div>
+
+    <footer class="ys-footer">
+
+        <div class="ys-container">
+
+            <div class="ys-footer-grid">
+
+                <!-- BRAND -->
+                <div class="ys-footer-brand">
+
+                    <img src="gallery/ys_color_fav.png" alt="Yuro Shoppy" class="ys-footer-logo">
+
+                    <h3 class="ys-brand-name">Yuro Shoppy</h3>
+                    <p class="ys-footer-desc">
+                        +91 7010704215
+                    </p>
+                    <p class="ys-footer-desc">
+                        Fast delivery • Quality products • Affordable prices across Tamil Nadu.
+                    </p>
+
+                    <div class="ys-footer-social">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-x-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+
+                </div>
+
+
+                <!-- NAVIGATION -->
+                <div class="ys-footer-col">
+                    <h4>Explore</h4>
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About Us</a>
+                    <a href="partnership.html">Business Models</a>
+                    <a href="deliveryprocess.html">Delivery Process</a>
+                    <a href="index.html#yscontact">Careers</a>
+                </div>
+
+
+                <!-- CUSTOMER -->
+                <div class="ys-footer-col">
+                    <h4>Customer</h4>
+                    <a href="#">Contact Support</a>
+                    <a href="#">Order Tracking</a>
+                    <a href="#">Shipping Policy</a>
+                    <a href="#">Returns & Refunds</a>
+                    <a href="#">Help Center</a>
+                </div>
+
+
+                <!-- APP DOWNLOAD -->
+                <div class="ys-footer-col ys-app-section">
+
+                    <h4>Get the App</h4>
+
+                    <p>Download Yuro Shoppy for faster shopping.</p>
+
+                    <div class="ys-app-buttons">
+
+                        <a href="#" class="ys-playstore">
+                            <i class="fab fa-google-play"></i>
+                            <span>Google Play</span>
+                        </a>
+
+                        <a href="#" class="ys-appstore">
+                            <i class="fab fa-apple"></i>
+                            <span>App Store</span>
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- QUOTE -->
+
+            <div class="ys-footer-quote">
+                “Shopping should be fast, simple, and accessible for everyone.”
+            </div>
+
+
+            <!-- BOTTOM -->
+
+            <div class="ys-footer-bottom">
+
+                <span>© 2026 Yuro Shoppy. All rights reserved.</span>
+
+                <div class="ys-footer-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Refund Policy</a>
+                </div>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+    <script>
+        (function () {
+            const modal = document.getElementById('investmentModal');
+            const closeBtn = document.getElementById('closeModalBtn');
+            const modalModelSpan = document.getElementById('modalModelDisplay');
+            const applyBtns = document.querySelectorAll('.apply-btn');
+            const nameInp = document.getElementById('fullName');
+            const phoneInp = document.getElementById('mobileNum');
+            const msgInp = document.getElementById('optionalMsg');
+            const sendBtn = document.getElementById('sendWABtn');
+
+            let currentModel = 'PK Group model';
+
+            applyBtns.forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    currentModel = btn.getAttribute('data-model') || 'PK Group model';
+                    modalModelSpan.innerText = currentModel;
+                    // clear fields (optional)
+                    nameInp.value = '';
+                    phoneInp.value = '';
+                    msgInp.value = '';
+                    modal.classList.add('active');
+                });
+            });
+
+            const closeModal = () => modal.classList.remove('active');
+            closeBtn.addEventListener('click', closeModal);
+            window.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
+
+            sendBtn.addEventListener('click', () => {
+                const name = nameInp.value.trim();
+                const phone = phoneInp.value.trim();
+                const extra = msgInp.value.trim();
+
+                if (!name) { alert('Please enter your name'); return; }
+                if (!phone) { alert('Please enter your WhatsApp number'); return; }
+                if (!/^[6-9]\d{9}$/.test(phone)) { alert('Enter a valid 10-digit Indian mobile number'); return; }
+
+                let message = `Hello PK Group, I'm interested in *${currentModel}*.%0a`;
+                message += `Name: ${name}%0a`;
+                message += `Phone: ${phone}%0a`;
+                if (extra) message += `Message: ${extra}%0a`;
+
+                const whatsappNumber = '917010704215';   // as per image
+                const url = `https://wa.me/${whatsappNumber}?text=${message}`;
+
+                alert('Your enquiry is ready. You will be redirected to WhatsApp.');
+                window.open(url, '_blank');
+                closeModal();
+            });
+        })();
+    </script>
+
+    <script>
+        /* Counter Animation */
+        document.querySelectorAll('.counter').forEach(counter => {
+            const target = +counter.dataset.target;
+            let count = 0;
+            const update = () => {
+                const inc = target / 100;
+                if (count < target) {
+                    count += inc;
+                    counter.innerText = Math.ceil(count);
+                    setTimeout(update, 200);
+                } else {
+                    counter.innerText = target;
+                }
+            }
+            update();
+        });
+    </script>
+    <script>
+        const toggle = document.querySelector(".ys-menu-toggle");
+        const mobileNav = document.querySelector(".ys-mobile-nav");
+
+        toggle.addEventListener("click", () => {
+            mobileNav.classList.toggle("active");
+        });
+    </script>
+
+    <script>
+        // ===== Investor Future Section Animation =====
+
+        document.addEventListener("DOMContentLoaded", function () {
+
+            const futureCards = document.querySelectorAll(".ys-future-card");
+
+            function revealFutureCards() {
+                const triggerBottom = window.innerHeight * 0.85;
+
+                futureCards.forEach(card => {
+                    const cardTop = card.getBoundingClientRect().top;
+
+                    if (cardTop < triggerBottom) {
+                        card.classList.add("ys-visible");
+                    }
+                });
+            }
+
+            window.addEventListener("scroll", revealFutureCards);
+            revealFutureCards();
+        });
+    </script>
+</body>
+
+
+</html>
